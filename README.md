@@ -43,7 +43,7 @@ var createRunner = require('atom-jasmine2-test-runner').createRunner
 
 // optional options to customize the runner
 var extraOptions = {
-  glob: "./**/*-spec.js"
+  glob: "**/*-spec.js"
 }
 
 var optionalConfigurationFunction = function (jasmine) {
@@ -64,7 +64,7 @@ Returns a test runner created with the given `options` and `callback`. Both para
 
 <!--  * `reporter [default: the default reporter]` - Which reporter to use on the terminal -->
   * `globalAtom [default: true]` - Whether or not to assign the created Atom environment to `global.atom`
-  * `glob [default: "./spec/**/*-spec.js"]` - File extensions that indicate that the file contains tests
+  * `glob [default: "**/*-spec.js"]` - File extensions that indicate that the file contains tests
 <!--  * `colors [default: true]` - Whether or not to colorize output on the terminal -->
   * `htmlTitle [default: '']` - The string to use for the window title in the HTML reporter
 
