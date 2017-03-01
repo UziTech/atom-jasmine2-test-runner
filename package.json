@@ -1,0 +1,20 @@
+{
+  "name": "atom-jasmine2-test-runner",
+  "version": "0.0.1",
+  "description": "Run your Atom package tests using Jasmine 2.x",
+  "repository": "https://github.com/UziTech/atom-jasmine2-test-runner",
+  "main": "index.js",
+  "atomTestRunner": "./test/runner",
+  "scripts": {
+    "test": "atom --test test/"
+  },
+  "keywords": ["atom", "jasmine", "tests"],
+  "author": "Tony Brix",
+  "license": "MIT",
+  "dependencies": {
+    "etch": "^0.9.0",
+    "less": "^2.7.2",
+    "jasmine": "^2.5.3",
+    "tmp": "0.0.31"
+  }
+}
