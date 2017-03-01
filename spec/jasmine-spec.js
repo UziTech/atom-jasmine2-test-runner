@@ -1,5 +1,5 @@
 "use babel";
-/* globals jasmine, describe, beforeEach, beforeAll, afterEach, afterAll, it, expect, pending, spyOn, xit, xdescribe */
+/* globals jasmine, describe, beforeEach, beforeAll, afterEach, afterAll, it, expect, fail, pending, spyOn, xit, xdescribe */
 
 describe("A suite", function () {
 	it("contains spec with an expectation", function () {
@@ -8,7 +8,7 @@ describe("A suite", function () {
 });
 
 describe("A suite is just a function", function () {
-	var a;
+	let a;
 
 	it("and so is a spec", function () {
 		a = true;
@@ -31,8 +31,8 @@ describe("The 'toBe' matcher compares with ===", function () {
 describe("Included matchers:", function () {
 
 	it("The 'toBe' matcher compares with ===", function () {
-		var a = 12;
-		var b = a;
+		const a = 12;
+		const b = a;
 
 		expect(a).toBe(b);
 		expect(a).not.toBe(null);
@@ -40,17 +40,17 @@ describe("Included matchers:", function () {
 
 	describe("The 'toEqual' matcher", function () {
 
-		it("works for simple literals and variables", function () {
-			var a = 12;
+		it("works for simple literals and constiables", function () {
+			const a = 12;
 			expect(a).toEqual(12);
 		});
 
 		it("should work for objects", function () {
-			var foo = {
+			const foo = {
 				a: 12,
 				b: 34
 			};
-			var bar = {
+			const bar = {
 				a: 12,
 				b: 34
 			};
@@ -59,7 +59,7 @@ describe("Included matchers:", function () {
 	});
 
 	it("The 'toMatch' matcher is for regular expressions", function () {
-		var message = "foo bar baz";
+		const message = "foo bar baz";
 
 		expect(message).toMatch(/bar/);
 		expect(message).toMatch("bar");
@@ -67,7 +67,7 @@ describe("Included matchers:", function () {
 	});
 
 	it("The 'toBeDefined' matcher compares against `undefined`", function () {
-		var a = {
+		const a = {
 			foo: "foo"
 		};
 
@@ -76,7 +76,7 @@ describe("Included matchers:", function () {
 	});
 
 	it("The `toBeUndefined` matcher compares against `undefined`", function () {
-		var a = {
+		const a = {
 			foo: "foo"
 		};
 
@@ -85,8 +85,8 @@ describe("Included matchers:", function () {
 	});
 
 	it("The 'toBeNull' matcher compares against null", function () {
-		var a = null;
-		var foo = "foo";
+		const a = null;
+		const foo = "foo";
 
 		expect(null).toBeNull();
 		expect(a).toBeNull();
@@ -94,14 +94,16 @@ describe("Included matchers:", function () {
 	});
 
 	it("The 'toBeTruthy' matcher is for boolean casting testing", function () {
-		var a, foo = "foo";
+		const a = null;
+		const foo = "foo";
 
 		expect(foo).toBeTruthy();
 		expect(a).not.toBeTruthy();
 	});
 
 	it("The 'toBeFalsy' matcher is for boolean casting testing", function () {
-		var a, foo = "foo";
+		const a = null;
+		const foo = "foo";
 
 		expect(a).toBeFalsy();
 		expect(foo).not.toBeFalsy();
@@ -109,14 +111,14 @@ describe("Included matchers:", function () {
 
 	describe("The 'toContain' matcher", function () {
 		it("works for finding an item in an Array", function () {
-			var a = ["foo", "bar", "baz"];
+			const a = ["foo", "bar", "baz"];
 
 			expect(a).toContain("bar");
 			expect(a).not.toContain("quux");
 		});
 
 		it("also works for finding a substring", function () {
-			var a = "foo bar baz";
+			const a = "foo bar baz";
 
 			expect(a).toContain("bar");
 			expect(a).not.toContain("quux");
@@ -124,7 +126,7 @@ describe("Included matchers:", function () {
 	});
 
 	it("The 'toBeLessThan' matcher is for mathematical comparisons", function () {
-		var pi = 3.1415926,
+		const pi = 3.1415926,
 			e = 2.78;
 
 		expect(e).toBeLessThan(pi);
@@ -132,7 +134,7 @@ describe("Included matchers:", function () {
 	});
 
 	it("The 'toBeGreaterThan' matcher is for mathematical comparisons", function () {
-		var pi = 3.1415926,
+		const pi = 3.1415926,
 			e = 2.78;
 
 		expect(pi).toBeGreaterThan(e);
@@ -140,7 +142,7 @@ describe("Included matchers:", function () {
 	});
 
 	it("The 'toBeCloseTo' matcher is for precision math comparison", function () {
-		var pi = 3.1415926,
+		const pi = 3.1415926,
 			e = 2.78;
 
 		expect(pi).not.toBeCloseTo(e, 2);
@@ -148,13 +150,14 @@ describe("Included matchers:", function () {
 	});
 
 	it("The 'toThrow' matcher is for testing if a function throws an exception", function () {
-		var foo = function () {
+		const foo = function () {
 			return 1 + 2;
 		};
-		var bar = function () {
+		const bar = function () {
+			// eslint-disable-next-line no-undef
 			return a + 1;
 		};
-		var baz = function () {
+		const baz = function () {
 			throw "what";
 		};
 
@@ -164,7 +167,7 @@ describe("Included matchers:", function () {
 	});
 
 	it("The 'toThrowError' matcher is for testing a specific thrown exception", function () {
-		var foo = function () {
+		const foo = function () {
 			throw new TypeError("foo bar baz");
 		};
 
@@ -176,7 +179,7 @@ describe("Included matchers:", function () {
 });
 
 describe("A spec using the fail function", function () {
-	var foo = function (x, callBack) {
+	const foo = function (x, callBack) {
 		if (x) {
 			callBack();
 		}
@@ -191,14 +194,14 @@ describe("A spec using the fail function", function () {
 
 describe("A spec", function () {
 	it("is just a function, so it can contain any code", function () {
-		var foo = 0;
+		let foo = 0;
 		foo += 1;
 
 		expect(foo).toEqual(1);
 	});
 
 	it("can have more than one expectation", function () {
-		var foo = 0;
+		let foo = 0;
 		foo += 1;
 
 		expect(foo).toEqual(1);
@@ -207,7 +210,7 @@ describe("A spec", function () {
 });
 
 describe("A spec using beforeEach and afterEach", function () {
-	var foo = 0;
+	let foo = 0;
 
 	beforeEach(function () {
 		foo += 1;
@@ -228,7 +231,7 @@ describe("A spec using beforeEach and afterEach", function () {
 });
 
 describe("A spec using beforeAll and afterAll", function () {
-	var foo;
+	let foo;
 
 	beforeAll(function () {
 		foo = 1;
@@ -260,12 +263,12 @@ describe("A spec", function () {
 
 	it("prevents test pollution by having an empty `this` created for the next spec", function () {
 		expect(this.foo).toEqual(0);
-		expect(this.bar).toBe(undefined);
+		expect(this.bar).toBeUndefined();
 	});
 });
 
 describe("A spec", function () {
-	var foo;
+	let foo;
 
 	beforeEach(function () {
 		foo = 0;
@@ -286,7 +289,7 @@ describe("A spec", function () {
 	});
 
 	describe("nested inside a second describe", function () {
-		var bar;
+		let bar;
 
 		beforeEach(function () {
 			bar = 1;
@@ -299,7 +302,7 @@ describe("A spec", function () {
 });
 
 xdescribe("A spec", function () {
-	var foo;
+	let foo;
 
 	beforeEach(function () {
 		foo = 0;
@@ -326,7 +329,7 @@ describe("Pending specs", function () {
 });
 
 describe("A spy", function () {
-	var foo, bar = null;
+	let foo, bar = null;
 
 	beforeEach(function () {
 		foo = {
@@ -360,7 +363,7 @@ describe("A spy", function () {
 });
 
 describe("A spy, when configured to call through", function () {
-	var foo, bar, fetchedBar;
+	let foo, bar, fetchedBar;
 
 	beforeEach(function () {
 		foo = {
@@ -392,7 +395,7 @@ describe("A spy, when configured to call through", function () {
 });
 
 describe("A spy, when configured to fake a return value", function () {
-	var foo, bar, fetchedBar;
+	let foo, bar, fetchedBar;
 
 	beforeEach(function () {
 		foo = {
@@ -424,7 +427,7 @@ describe("A spy, when configured to fake a return value", function () {
 });
 
 describe("A spy, when configured to fake a series of return values", function () {
-	var foo, bar;
+	let foo, bar;
 
 	beforeEach(function () {
 		foo = {
@@ -458,7 +461,7 @@ describe("A spy, when configured to fake a series of return values", function ()
 });
 
 describe("A spy, when configured with an alternate implementation", function () {
-	var foo, bar, fetchedBar;
+	let foo, bar, fetchedBar;
 
 	beforeEach(function () {
 		foo = {
@@ -492,7 +495,7 @@ describe("A spy, when configured with an alternate implementation", function () 
 });
 
 describe("A spy, when configured to throw an error", function () {
-	var foo, bar;
+	let foo, bar;
 
 	beforeEach(function () {
 		foo = {
@@ -512,7 +515,7 @@ describe("A spy, when configured to throw an error", function () {
 });
 
 describe("A spy", function () {
-	var foo, bar = null;
+	let foo, bar = null;
 
 	beforeEach(function () {
 		foo = {
@@ -537,7 +540,7 @@ describe("A spy", function () {
 });
 
 describe("A spy", function () {
-	var foo, bar = null;
+	let foo, bar = null;
 
 	beforeEach(function () {
 		foo = {
@@ -583,30 +586,32 @@ describe("A spy", function () {
 
 	it("can provide the context and arguments to all calls", function () {
 		foo.setBar(123);
-
-		expect(foo.setBar.calls.all()).toEqual([{ object: foo, args: [123], returnValue: undefined }]);
+		let undef;
+		expect(foo.setBar.calls.all()).toEqual([{ object: foo, args: [123], returnValue: undef }]);
 	});
 
 	it("has a shortcut to the most recent call", function () {
 		foo.setBar(123);
 		foo.setBar(456, "baz");
 
-		expect(foo.setBar.calls.mostRecent()).toEqual({ object: foo, args: [456, "baz"], returnValue: undefined });
+		let undef;
+		expect(foo.setBar.calls.mostRecent()).toEqual({ object: foo, args: [456, "baz"], returnValue: undef });
 	});
 
 	it("has a shortcut to the first call", function () {
 		foo.setBar(123);
 		foo.setBar(456, "baz");
 
-		expect(foo.setBar.calls.first()).toEqual({ object: foo, args: [123], returnValue: undefined });
+		let undef;
+		expect(foo.setBar.calls.first()).toEqual({ object: foo, args: [123], returnValue: undef });
 	});
 
 	it("tracks the context", function () {
-		var spy = jasmine.createSpy("spy");
-		var baz = {
+		const spy = jasmine.createSpy("spy");
+		const baz = {
 			fn: spy
 		};
-		var quux = {
+		const quux = {
 			fn: spy
 		};
 		baz.fn(123);
@@ -629,7 +634,7 @@ describe("A spy", function () {
 });
 
 describe("A spy, when created manually", function () {
-	var whatAmI;
+	let whatAmI;
 
 	beforeEach(function () {
 		whatAmI = jasmine.createSpy("whatAmI");
@@ -659,7 +664,7 @@ describe("A spy, when created manually", function () {
 });
 
 describe("Multiple spies, when created manually", function () {
-	var tape;
+	let tape;
 
 	beforeEach(function () {
 		tape = jasmine.createSpyObj("tape", ["play", "pause", "stop", "rewind"]);
@@ -696,7 +701,7 @@ describe("jasmine.any", function () {
 
 	describe("when used with a spy", function () {
 		it("is useful for comparing arguments", function () {
-			var foo = jasmine.createSpy("foo");
+			const foo = jasmine.createSpy("foo");
 			foo(12, function () {
 				return true;
 			});
@@ -713,7 +718,7 @@ describe("jasmine.anything", function () {
 
 	describe("when used with a spy", function () {
 		it("is useful when the argument can be ignored", function () {
-			var foo = jasmine.createSpy("foo");
+			const foo = jasmine.createSpy("foo");
 			foo(12, function () {
 				return false;
 			});
@@ -724,7 +729,7 @@ describe("jasmine.anything", function () {
 });
 
 describe("jasmine.objectContaining", function () {
-	var foo;
+	let foo;
 
 	beforeEach(function () {
 		foo = {
@@ -745,7 +750,7 @@ describe("jasmine.objectContaining", function () {
 
 	describe("when used with a spy", function () {
 		it("is useful for comparing arguments", function () {
-			var callback = jasmine.createSpy("callback");
+			const callback = jasmine.createSpy("callback");
 
 			callback({
 				bar: "baz"
@@ -762,7 +767,7 @@ describe("jasmine.objectContaining", function () {
 });
 
 describe("jasmine.arrayContaining", function () {
-	var foo;
+	let foo;
 
 	beforeEach(function () {
 		foo = [1, 2, 3, 4];
@@ -775,7 +780,7 @@ describe("jasmine.arrayContaining", function () {
 
 	describe("when used with a spy", function () {
 		it("is useful when comparing arguments", function () {
-			var callback = jasmine.createSpy("callback");
+			const callback = jasmine.createSpy("callback");
 
 			callback([1, 2, 3, 4]);
 
@@ -793,7 +798,7 @@ describe("jasmine.stringMatching", function () {
 
 	describe("when used with a spy", function () {
 		it("is useful for comparing arguments", function () {
-			var callback = jasmine.createSpy("callback");
+			const callback = jasmine.createSpy("callback");
 
 			callback("foobarbaz");
 
@@ -804,9 +809,9 @@ describe("jasmine.stringMatching", function () {
 });
 
 describe("custom asymmetry", function () {
-	var tester = {
+	const tester = {
 		asymmetricMatch: function (actual) {
-			var secondValue = actual.split(",")[1];
+			const secondValue = actual.split(",")[1];
 			return secondValue === "bar";
 		}
 	};
@@ -817,7 +822,7 @@ describe("custom asymmetry", function () {
 
 	describe("when used with a spy", function () {
 		it("is useful for comparing arguments", function () {
-			var callback = jasmine.createSpy("callback");
+			const callback = jasmine.createSpy("callback");
 
 			callback("foo,bar,baz");
 
@@ -827,7 +832,7 @@ describe("custom asymmetry", function () {
 });
 
 describe("Manually ticking the Jasmine Clock", function () {
-	var timerCallback;
+	let timerCallback;
 
 	beforeEach(function () {
 		timerCallback = jasmine.createSpy("timerCallback");
@@ -869,7 +874,7 @@ describe("Manually ticking the Jasmine Clock", function () {
 
 	describe("Mocking the Date object", function () {
 		it("mocks the Date object and sets it to a given time", function () {
-			var baseTime = new Date(2013, 9, 23);
+			const baseTime = new Date(2013, 9, 23);
 
 			jasmine.clock().mockDate(baseTime);
 
@@ -880,7 +885,7 @@ describe("Manually ticking the Jasmine Clock", function () {
 });
 
 describe("Asynchronous specs", function () {
-	var value;
+	let value;
 
 	beforeEach(function (done) {
 		setTimeout(function () {
@@ -912,7 +917,7 @@ describe("Asynchronous specs", function () {
 	});
 
 	describe("A spec using done.fail", function () {
-		var foo = function (x, callBack1, callBack2) {
+		const foo = function (x, callBack1, callBack2) {
 			if (x) {
 				setTimeout(callBack1, 0);
 			} else {
