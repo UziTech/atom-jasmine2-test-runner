@@ -1,6 +1,6 @@
-'use babel'
+"use babel";
 
-import createRunner from './lib/create-runner'
+import createRunner from "./lib/create-runner";
 
-module.exports = createRunner()
-module.exports.createRunner = createRunner
+module.exports = createRunner();
+module.exports.createRunner = createRunner;

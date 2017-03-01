@@ -1,8 +1,8 @@
-'use babel'
+"use babel";
 
-import {createRunner} from '../'
+import { createRunner } from "../";
 
 module.exports = createRunner({
-  globalAtom: false,
-  htmlTitle: "atom-mocha-test-runner tests"
-})
+	globalAtom: false,
+	htmlTitle: "atom-mocha-test-runner tests"
+});

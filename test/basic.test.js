@@ -1,57 +1,60 @@
-'use babel'
+"use babel";
+/* globals describe, beforeEach, afterEach, it, expect */
 
-import {assert} from 'chai'
-import Grim from 'grim'
+import Grim from "grim";
 
-function deprecatedFunction () {
-  Grim.deprecate("This function is deprecated! Please use `nonDeprecatedFunction()`")
+function deprecatedFunction() {
+	Grim.deprecate("This function is deprecated! Please use `nonDeprecatedFunction()`");
 }
 
-describe('Basic Tests', () => {
-  beforeEach(() => {
-    global.atom = global.buildAtomEnvironment()
-  })
+describe("Basic Tests", () => {
+	beforeEach(() => {
+		global.atom = global.buildAtomEnvironment();
+	});
 
-  afterEach(() => {
-    global.atom.destroy()
-  })
+	afterEach(() => {
+		global.atom.destroy();
+	});
 
-  it('passes', () => {
-    assert.equal(true, true)
-  })
+	it("passes", () => {
+		expect(true).toBe(true);
+	});
 
-  it('fails', () => {
-    assert.notInclude("test runner", "test")
-  })
+	it("fails", () => {
+		expect(true).toBe(false);
+	});
 
-  describe("nested at one level", () => {
-    describe("nested at two levels", () => {
-      it('reports failures correctly', () => {
-        assert.isAtLeast(4, 5)
-      })
-    })
-  })
+	describe("nested at one level", () => {
+		describe("nested at two levels", () => {
+			it("reports failures correctly", () => {
+				expect(4).toBeGreaterThan(5);
+			});
+		});
+	});
 
-  it('marks missing it blocks as pending')
+	it("marks missing it blocks as pending");
 
-  it('reports deprecations', () => {
-    assert.equal(true, true)
-    Grim.deprecate("This has been deprecated!")
-  })
+	it("reports deprecations", () => {
+		expect(true).toBe(true);
+		Grim.deprecate("This has been deprecated!");
+	});
 
-  describe('with a second describe block', () => {
-    it('fails synchronously when an assertion fails', () => {
-      deprecatedFunction()
-      deprecatedFunction()
-      assert.equal(true, false)
-      return new Promise(resolve => setTimeout(resolve, 5000))
-    })
-  })
-})
+	describe("with a second describe block", () => {
+		it("fails synchronously when an assertion fails", (done) => {
+			deprecatedFunction();
+			deprecatedFunction();
+			expect(true).toBe(false);
+			setTimeout(done, 5000);
+		});
+	});
+});
 
-describe('A Second Suite', () => {
-  it('fails asynchronously when a rejected promise is returned', () => {
-    assert.equal(10, 10)
-    return new Promise((resolve, rej) => setTimeout(() => rej(new Error("Failure via rejected promise")), 1000))
-  })
-})
+describe("A Second Suite", () => {
+	it("fails asynchronously when a rejected promise is returned", (done) => {
+		expect(true).toBe(true);
+		setTimeout(() => {
+			expect(true).toBe(false);
+			done();
+		}, 1000);
+	});
+});
