@@ -32,7 +32,7 @@ describe("failing", function () {
 			done();
 		}, 1000);
 	});
-	it("should fail when called", function (done) {
+	it("should fail when called", function () {
 		fail("because i called fail");
 		expect(true).toBe(false);
 	});
