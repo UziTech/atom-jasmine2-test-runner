@@ -32,7 +32,7 @@ describe("failing", function () {
 		}, 1000);
 	});
 	it("should fail when called", function (done) {
-		fail("because i called fail async");
+		fail("because i called fail");
 		expect(true).toBe(false);
 	});
 	it("should fail when called async", function (done) {
