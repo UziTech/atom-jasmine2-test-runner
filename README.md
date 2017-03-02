@@ -45,15 +45,15 @@ If you'd like to perform more customization of your testing environment, you can
 Then export a test runner created via the atom-jasmine2-test-runner from `test/custom-runner.js`:
 
 ```javascript
-var createRunner = require('atom-jasmine2-test-runner').createRunner
+const { createRunner}  = require('atom-jasmine2-test-runner');
 
 // optional options to customize the runner
-var extraOptions = {
-  suffix: "-spec.js"
+const extraOptions = {
+  suffix: "-spec.js",
   legacySuffix: "-spec-v1.js"
-}
+};
 
-var optionalConfigurationFunction = function (jasmine) {
+const optionalConfigurationFunction = function(jasmine) {
   // If provided, atom-jasmine2-test-runner will pass the jasmine instance
   // to this function, so you can do whatever you'd like to it.
 }
