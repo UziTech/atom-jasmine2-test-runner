@@ -20,6 +20,7 @@ describe("pending", function () {
 		pending("because i called pending");
 		expect(true).toBe(true);
 	});
+	it("should be pending with no function");
 });
 describe("failing", function () {
 	it("should fail", function () {
