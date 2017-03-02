@@ -10,6 +10,12 @@ $ apm install [--save-dev] atom-jasmine2-test-runner
 
 ## Usage
 
+### Transition from Jasmine v1.3
+
+There is legacy support for transitioning to Jasmine 2.x from 1.3.
+
+By default any specs with a file name matching `*-spec-v1.js` will be ran by the default Atom test runner after any new tests are ran.
+
 ### Default Test Runner
 
 If you want to use all the default options, simply pass the module name as the `atomTestRunner` value in your `package.json`:
@@ -43,7 +49,8 @@ var createRunner = require('atom-jasmine2-test-runner').createRunner
 
 // optional options to customize the runner
 var extraOptions = {
-  glob: "**/*-spec.js"
+  suffix: "-spec.js"
+  legacySuffix: "-spec-v1.js"
 }
 
 var optionalConfigurationFunction = function (jasmine) {
