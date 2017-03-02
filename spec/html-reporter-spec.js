@@ -1,6 +1,12 @@
 "use babel";
 /* globals jasmine, describe, beforeEach, beforeAll, afterEach, afterAll, it, expect, fail, pending, spyOn, xit, xdescribe */
 
+import Grim from "grim";
+
+function deprecatedFunction() {
+	Grim.deprecate("This function is deprecated! Please use `nonDeprecatedFunction()`");
+}
+
 describe("passing", function () {
 	it("should pass", function () {
 		expect(true).toBe(true);
@@ -42,5 +48,25 @@ describe("failing", function () {
 			expect(true).toBe(false);
 			done();
 		}, 1000);
+	});
+});
+describe("deprecations", function () {
+	it("should report deprecation", () => {
+		expect(true).toBe(true);
+		Grim.deprecate("This has been deprecated!");
+	});
+
+	it("should report deprecation async", function (done) {
+		setTimeout(_ => {
+			expect(true).toBe(true);
+			deprecatedFunction();
+			done();
+		}, 1000);
+	});
+
+	it("should report deprecation from failure", () => {
+		deprecatedFunction();
+		expect(true).toBe(false);
+		deprecatedFunction();
 	});
 });
