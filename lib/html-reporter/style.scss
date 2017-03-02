@@ -1,36 +1,63 @@
-@offWhite: #fafafa;
-@gray: #cccccc;
-@lightGray: #dedede;
-@lightestGray: #fcfcfc;
-@darkGray: darken(@gray, 40%);
-@yellow: #f0ad4e;
-@darkYellow: darken(@yellow, 20%);
-@green: #5cb85c;
-@lightGreen: lighten(@green, 20%);
-@darkGreen: darken(@green, 20%);
-@red: #d9534f;
-@lightRed: lighten(@red, 20%);
-@darkRed: darken(@red, 20%);
-@blue: #3bbcf7;
-@lightBlue: lighten(@blue, 20%);
-@darkBlue: darken(@blue, 20%);
-@bodyFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-@monospaceFont: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-
-.with-left-border(@color) {
+$offWhite: #fafafa;
+$gray: #cccccc;
+$lightGray: #dedede;
+$lightestGray: #fcfcfc;
+$darkGray: darken($gray, 40%);
+$yellow: #f0ad4e;
+$darkYellow: darken($yellow, 20%);
+$green: #5cb85c;
+$lightGreen: lighten($green, 20%);
+$darkGreen: darken($green, 20%);
+$red: #d9534f;
+$lightRed: lighten($red, 20%);
+$darkRed: darken($red, 20%);
+$blue: #3bbcf7;
+$lightBlue: lighten($blue, 20%);
+$darkBlue: darken($blue, 20%);
+$bodyFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$monospaceFont: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+@mixin with-left-border($color) {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	padding-left: 10px;
-	border-left: 3px solid @color;
+	border-left: 3px solid $color;
 }
 
+.float-right {
+	float: right;
+}
+
+.octicon {
+	cursor: pointer;
+	display: none;
+}
+
+.full-header {
+	cursor: pointer;
+	display: flex;
+}
+
+.display-none {
+	display: none;
+}
+
+.display-block {
+	display: block;
+}
+
+.triangle {
+	flex-basis: 20px;
+	margin-right: 5px;
+}
+
+.stack,
 .stack-trace {
 	line-height: initial;
 	display: pre;
-	font-family: @monospaceFont;
+	font-family: $monospaceFont;
 	font-size: 13px;
-	background-color: @lightestGray;
-	border: 1px solid @lightGray;
+	background-color: $lightestGray;
+	border: 1px solid $lightGray;
 	padding: 5px;
 	border-radius: 5px;
 	white-space: pre;
@@ -55,15 +82,15 @@ body {
 	overflow: auto !important;
 	margin: 0;
 	padding: 0;
-	font-family: @bodyFont;
-	background-color: @offWhite;
+	font-family: $bodyFont;
+	background-color: $offWhite;
 	font-size: initial;
 	color: initial;
 	line-height: initial;
 	flex: 0 1 100%;
 }
 
-#atom-mocha-test-runner::shadow {
+#atom-mocha-test-runner {
 	.top-header {
 		font-size: 18px;
 		font-weight: bold;
@@ -90,21 +117,21 @@ body {
 		display: flex;
 
 		&.waiting {
-			border-color: @darkBlue;
-			color: @darkBlue;
-			background-color: @lightBlue;
+			border-color: $darkBlue;
+			color: $darkBlue;
+			background-color: $lightBlue;
 		}
 
 		&.passed {
-			border-color: @darkGreen;
-			color: @darkGreen;
-			background-color: @lightGreen;
+			border-color: $darkGreen;
+			color: $darkGreen;
+			background-color: $lightGreen;
 		}
 
 		&.failed {
-			border-color: @darkRed;
-			color: @darkRed;
-			background-color: @lightRed;
+			border-color: $darkRed;
+			color: $darkRed;
+			background-color: $lightRed;
 		}
 
 		.counts {
@@ -139,19 +166,19 @@ body {
 			cursor: default;
 
 			&.waiting {
-				color: @gray;
+				color: $gray;
 			}
 
 			&.pending {
-				color: @yellow;
+				color: $yellow;
 			}
 
 			&.passed {
-				color: @green;
+				color: $green;
 			}
 
 			&.failed {
-				color: @red;
+				color: $red;
 			}
 		}
 	}
@@ -175,17 +202,13 @@ body {
 		}
 
 		.test {
-			.with-left-border(@red);
+			@include with-left-border($red);
 			line-height: 26px;
 		}
 
 		.assertion-failure {
 			font-weight: bold;
-			color: @red;
-		}
-
-		.stack {
-			.stack-trace
+			color: $red;
 		}
 	}
 
@@ -198,20 +221,16 @@ body {
 			border-bottom-style: solid;
 			border-top-width: 1px;
 			border-bottom-width: 1px;
-			border-color: @darkGray;
-			background-color: @lightGray;
+			border-color: $darkGray;
+			background-color: $lightGray;
 			text-align: center;
-			color: @darkGray;
+			color: $darkGray;
 		}
 
 		.deprecation {
-			.with-left-border(@darkGray);
+			@include with-left-border($darkGray);
 			line-height: 24px;
 			margin-left: 20px;
-		}
-
-		.stack {
-			.stack-trace
 		}
 	}
 }
