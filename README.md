@@ -62,13 +62,13 @@ module.exports = createRunner(extraOptions, optionalConfigurationFunction)
 
 Returns a test runner created with the given `options` and `callback`. Both parameters are optional. The returned value can be exported from your `atomTestRunner` script for Atom to consume.
 
-* `options` - An object specifying customized options:
+*   `options` - An object specifying customized options:
 
-<!--  * `reporter [default: the default reporter]` - Which reporter to use on the terminal -->
-  * `globalAtom [default: true]` - Whether or not to assign the created Atom environment to `global.atom`
-  * `glob [default: "**/*-spec.js"]` - File extensions that indicate that the file contains tests
-<!--  * `colors [default: true]` - Whether or not to colorize output on the terminal -->
-  * `htmlTitle [default: '']` - The string to use for the window title in the HTML reporter
+    *   `reporter [default: the default reporter]` - Which reporter to use on the terminal
+    *   `globalAtom [default: true]` - Whether or not to assign the created Atom environment to `global.atom`
+    *   `glob [default: "**/*-spec.js"]` - File extensions that indicate that the file contains tests
+    *   `colors [default: true]` - Whether or not to colorize output on the terminal
+    *   `htmlTitle [default: '']` - The string to use for the window title in the HTML reporter
 
 ### Writing Tests
 
