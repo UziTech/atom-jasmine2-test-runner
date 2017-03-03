@@ -76,6 +76,7 @@ Returns a test runner created with the given `options` and `callback`. Both para
     *   `legacySuffix [default: "-spec-v1.js"]` - File extension that indicates that the file contains Jasmine v1.x tests
     *   `colors [default: true]` - Whether or not to colorize output on the terminal
     *   `htmlTitle [default: '']` - The string to use for the window title in the HTML reporter
+    *   `showEditor [default: false]` - Whether or not to add a "Show Editor" tab to minimize the specs so you can see the editor behind it
 
 ### Writing Tests
 
