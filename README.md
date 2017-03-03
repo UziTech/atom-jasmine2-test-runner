@@ -70,7 +70,6 @@ Returns a test runner created with the given `options` and `callback`. Both para
 *   `options` - An object specifying customized options:
 
     *   `reporter [default: the default reporter]` - Which reporter to use on the terminal
-    *   `globalAtom [default: true]` - Whether or not to assign the created Atom environment to `global.atom`
     *   `suffix [default: "-spec.js"]` - File extension that indicates that the file contains tests
     *   `legacySuffix [default: "-spec-v1.js"]` - File extension that indicates that the file contains Jasmine v1.x tests
     *   `colors [default: true]` - Whether or not to colorize output on the terminal
