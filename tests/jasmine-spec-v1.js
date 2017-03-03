@@ -493,6 +493,7 @@ describe("Multiple spies, when created manually", function () {
 });
 
 xdescribe("jasmine.any", function () {
+	// this won't work
 	it("matches any value", function () {
 		expect({}).toEqual(jasmine.any(Object));
 		expect(12).toEqual(jasmine.any(Number));
@@ -510,7 +511,7 @@ xdescribe("jasmine.any", function () {
 	});
 });
 
-xdescribe("Manually ticking the Jasmine Mock Clock", function () {
+describe("Manually ticking the Jasmine Mock Clock", function () {
 	var timerCallback;
 
 	beforeEach(function () {
@@ -519,6 +520,7 @@ xdescribe("Manually ticking the Jasmine Mock Clock", function () {
 	});
 
 	it("causes a timeout to be called synchronously", function () {
+		jasmine.useRealClock();
 		setTimeout(function () {
 			timerCallback();
 		}, 100);
@@ -548,7 +550,7 @@ xdescribe("Manually ticking the Jasmine Mock Clock", function () {
 	});
 });
 
-xdescribe("Asynchronous specs", function () {
+describe("Asynchronous specs", function () {
 	var value, flag;
 
 	it("should support async execution of test preparation and expectations", function () {
@@ -556,7 +558,7 @@ xdescribe("Asynchronous specs", function () {
 		runs(function () {
 			flag = false;
 			value = 0;
-
+			jasmine.useRealClock();
 			setTimeout(function () {
 				flag = true;
 			}, 500);
