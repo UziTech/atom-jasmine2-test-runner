@@ -20,12 +20,12 @@ describe("passing", function () {
 			}, 1000);
 		}));
 	});
+	it("should pass with no function");
 });
 describe("pending", function () {
 	xit("should be pending", function () {
 		expect(true).toBe(true);
 	});
-	it("should be pending with no function");
 });
 describe("failing", function () {
 	it("should fail", function () {
