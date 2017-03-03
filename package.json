@@ -6,7 +6,7 @@
   "main": "index.js",
   "atomTestRunner": "./spec/runner",
   "scripts": {
-    "test": "atom --test ./spec/"
+    "test": "atom --test ./spec/jasmine-tests.js"
   },
   "keywords": [
     "atom",
