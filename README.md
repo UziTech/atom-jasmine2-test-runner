@@ -34,7 +34,7 @@ Note that your `package.json` may be cached by Atom's compile cache when running
 
 ### Programmatic Usage
 
-If you'd like to perform more customization of your testing environment, you can create a custom runner while still utilizing atom-jasmine2-test-runner for most of the heavy lifting. First, set `atomTestRunner` to a *relative* path to a file:
+If you'd like to perform more customization of your testing environment, you can create a custom runner while still utilizing atom-jasmine2-test-runner for most of the heavy lifting. First, set `atomTestRunner` to a _relative_ path to a file:
 
 ```javascript
 {
@@ -69,14 +69,15 @@ module.exports = createRunner(extraOptions, optionalConfigurationFunction)
 
 Returns a test runner created with the given `options` and `callback`. Both parameters are optional. The returned value can be exported from your `atomTestRunner` script for Atom to consume.
 
-*   `options` - An object specifying customized options:
+- `options` - An object specifying customized options:
 
-    *   `reporter [default: the default reporter]` - Which reporter to use on the terminal
-    *   `suffix [default: "-spec"]` - File extension that indicates that the file contains tests
-    *   `legacySuffix [default: "-spec-v1"]` - File extension that indicates that the file contains Jasmine v1.x tests
-    *   `showColors [default: true]` - Whether or not to colorize output on the terminal
-    *   `htmlTitle [default: '']` - The string to use for the window title in the HTML reporter
-    *   `showEditor [default: false]` - Whether or not to add a "Show Editor" tab to minimize the specs so you can see the editor behind it
+  - `reporter [default: the default reporter]` - Which reporter to use on the terminal
+  - `suffix [default: "-spec"]` - File extension that indicates that the file contains tests
+  - `legacySuffix [default: "-spec-v1"]` - File extension that indicates that the file contains Jasmine v1.x tests
+  - `showColors [default: true]` - Whether or not to colorize output on the terminal
+  - `htmlTitle [default: '']` - The string to use for the window title in the HTML reporter
+  - `showEditor [default: false]` - Whether or not to add a "Show Editor" tab to minimize the specs so you can see the editor behind it
+  - `timeReporter [default: false]` - Add a reporter that logs the time for each spec/suite. [TimeReporter](https://github.com/atom/atom/blob/master/spec/time-reporter.coffee)
 
 ### Writing Tests
 
