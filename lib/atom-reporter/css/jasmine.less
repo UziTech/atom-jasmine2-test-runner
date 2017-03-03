@@ -2,7 +2,7 @@
 @import "octicon-mixins";
 
 html {
-	background-color: @base-background-color;
+	background-color: #333 !important;
 }
 
 body {
@@ -78,7 +78,7 @@ body.tabs .spec-reporter-container {
 	// 578px initial window height, resize to see underlying editor
 	@media (min-height: 578px) {
 		flex: 0 1 75%;
-		min-height: 578px;
+		min-height: 100% !important;
 	}
 
 	.list-unstyled {
