@@ -2,4 +2,6 @@
 
 import { createRunner } from "../";
 
-module.exports = createRunner();
+module.exports = createRunner({
+	showColors: false
+});
