@@ -64,3 +64,26 @@ describe("deprecations", function () {
 		deprecatedFunction();
 	});
 });
+describe("multiple suites", function () {
+	describe("passing", function () {
+		it("should pass", function () {
+			expect(true).toBe(true);
+		});
+	});
+	describe("pending", function () {
+		xit("should be pending", function () {
+			expect(true).toBe(true);
+		});
+	});
+	describe("failing", function () {
+		it("should fail", function () {
+			expect(true).toBe(false);
+		});
+	});
+	describe("deprecation", function () {
+		it("should be deprecated", function () {
+			deprecatedFunction();
+			expect(true).toBe(true);
+		});
+	});
+});

@@ -18,6 +18,19 @@ describe("passing", function () {
 		}, 1000);
 	});
 });
+
+describe("passing", function () {
+	it("should pass", function () {
+		expect(true).toBe(true);
+	});
+	it("should pass async", function (done) {
+		setTimeout(_ => {
+			expect(true).toBe(true);
+			done();
+		}, 1000);
+	});
+});
+
 describe("pending", function () {
 	xit("should be pending", function () {
 		expect(true).toBe(true);
@@ -68,5 +81,28 @@ describe("deprecations", function () {
 		deprecatedFunction();
 		expect(true).toBe(false);
 		deprecatedFunction();
+	});
+});
+describe("multiple suites", function () {
+	describe("passing", function () {
+		it("should pass", function () {
+			expect(true).toBe(true);
+		});
+	});
+	describe("pending", function () {
+		xit("should be pending", function () {
+			expect(true).toBe(true);
+		});
+	});
+	describe("failing", function () {
+		it("should fail", function () {
+			expect(true).toBe(false);
+		});
+	});
+	describe("deprecation", function () {
+		it("should be deprecated", function () {
+			deprecatedFunction();
+			expect(true).toBe(true);
+		});
 	});
 });
