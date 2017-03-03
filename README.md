@@ -16,7 +16,7 @@ $ apm install [--save-dev] atom-jasmine2-test-runner
 
 There is legacy support for transitioning to Jasmine 2.x from 1.3.
 
-By default any specs with a file name matching `*-spec-v1.js` will be ran by the default Atom test runner after any new tests are ran.
+By default any specs with a file name matching `*-spec-v1.(js|coffee)` will be ran by the default Atom test runner after any new tests are ran.
 
 ### Default Test Runner
 
@@ -51,8 +51,8 @@ const { createRunner}  = require('atom-jasmine2-test-runner');
 
 // optional options to customize the runner
 const extraOptions = {
-  suffix: "-spec.js",
-  legacySuffix: "-spec-v1.js"
+  suffix: "-spec",
+  legacySuffix: "-spec-v1"
 };
 
 const optionalConfigurationFunction = function(jasmine) {
@@ -72,8 +72,8 @@ Returns a test runner created with the given `options` and `callback`. Both para
 *   `options` - An object specifying customized options:
 
     *   `reporter [default: the default reporter]` - Which reporter to use on the terminal
-    *   `suffix [default: "-spec.js"]` - File extension that indicates that the file contains tests
-    *   `legacySuffix [default: "-spec-v1.js"]` - File extension that indicates that the file contains Jasmine v1.x tests
+    *   `suffix [default: "-spec"]` - File extension that indicates that the file contains tests
+    *   `legacySuffix [default: "-spec-v1"]` - File extension that indicates that the file contains Jasmine v1.x tests
     *   `colors [default: true]` - Whether or not to colorize output on the terminal
     *   `htmlTitle [default: '']` - The string to use for the window title in the HTML reporter
     *   `showEditor [default: false]` - Whether or not to add a "Show Editor" tab to minimize the specs so you can see the editor behind it
