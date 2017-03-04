@@ -12,6 +12,7 @@ describe("passing", function () {
 		expect(true).toBe(true);
 	});
 	it("should pass async", function (done) {
+		// jasmine.useRealClock();
 		setTimeout(_ => {
 			expect(true).toBe(true);
 			done();
@@ -24,6 +25,7 @@ describe("passing", function () {
 		expect(true).toBe(true);
 	});
 	it("should pass async", function (done) {
+		// jasmine.useRealClock();
 		setTimeout(_ => {
 			expect(true).toBe(true);
 			done();
@@ -46,6 +48,7 @@ describe("failing", function () {
 		expect(true).toBe(false);
 	});
 	it("should fail async", function (done) {
+		// jasmine.useRealClock();
 		setTimeout(_ => {
 			expect(true).toBe(false);
 			done();
@@ -56,6 +59,7 @@ describe("failing", function () {
 		expect(true).toBe(false);
 	});
 	it("should fail when called async", function (done) {
+		// jasmine.useRealClock();
 		setTimeout(_ => {
 			fail("because i called fail async");
 			expect(true).toBe(false);
@@ -70,6 +74,7 @@ describe("deprecations", function () {
 	});
 
 	it("should report deprecation async", function (done) {
+		// jasmine.useRealClock();
 		setTimeout(_ => {
 			expect(true).toBe(true);
 			deprecatedFunction();

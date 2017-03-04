@@ -71,13 +71,14 @@ Returns a test runner created with the given `options` and `callback`. Both para
 
 - `options` - An object specifying customized options:
 
-  - `reporter [default: the default reporter]` - Which reporter to use on the terminal
-  - `suffix [default: "-spec"]` - File extension that indicates that the file contains tests
-  - `legacySuffix [default: "-spec-v1"]` - File extension that indicates that the file contains Jasmine v1.x tests
-  - `showColors [default: true]` - Whether or not to colorize output on the terminal
-  - `htmlTitle [default: '']` - The string to use for the window title in the HTML reporter
-  - `showEditor [default: false]` - Whether or not to add a "Show Editor" tab to minimize the specs so you can see the editor behind it
-  - `timeReporter [default: false]` - Add a reporter that logs the time for each spec/suite. [TimeReporter](https://github.com/atom/atom/blob/master/spec/time-reporter.coffee)
+  - `reporter` `[default: the default reporter]` - Which reporter to use on the terminal
+  - `suffix` `[default: "-spec"]` - File extension that indicates that the file contains tests
+  - `legacySuffix` `[default: "-spec-v1"]` - File extension that indicates that the file contains Jasmine v1.x tests
+  - `showColors` `[default: true]` - Whether or not to colorize output on the terminal
+  - `htmlTitle` `[default: '']` - The string to use for the window title in the HTML reporter
+  - `showEditor` `[default: false]` - Whether or not to add a "Show Editor" tab to minimize the specs so you can see the editor behind it
+  - `timeReporter` `[default: false]` - Add a reporter that logs the time for each spec/suite. [TimeReporter](https://github.com/atom/atom/blob/master/spec/time-reporter.coffee)
+  - `specHelper` `[default: false]` - Use Atom's [spec-helper](https://github.com/atom/atom/blob/master/spec/spec-helper.coffee). (:construction::rotating_light: Some things might not work :rotating_light::construction:) This includes new matchers (i.e. toExistOnDisk) as well as [jasmine-jquery](https://github.com/velesin/jasmine-jquery) and [jasmine-json](https://github.com/atom/jasmine-json) and more.
 
 ### Writing Tests
 
