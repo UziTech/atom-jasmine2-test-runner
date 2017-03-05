@@ -55,9 +55,10 @@ const extraOptions = {
   legacySuffix: "-spec-v1"
 };
 
-const optionalConfigurationFunction = function(jasmine) {
-  // If provided, atom-jasmine2-test-runner will pass the jasmine instance
-  // to this function, so you can do whatever you'd like to it.
+const optionalConfigurationFunction = function() {
+  // If provided, atom-jasmine2-test-runner will call this function before jasmine is started
+  // so you can do whatever you'd like with the global variables.
+  // (i.e. add custom matchers, require plugins, etc.)
 }
 
 module.exports = createRunner(extraOptions, optionalConfigurationFunction)
