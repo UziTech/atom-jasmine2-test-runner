@@ -9,7 +9,9 @@ function deprecatedFunction() {
 
 describe("Jasmine 2.x", function () {
 	beforeEach(function () {
-		jasmine.useRealClock();
+		if (jasmine.useRealClock) {
+			jasmine.useRealClock();
+		}
 	});
 
 	describe("passing", function () {
