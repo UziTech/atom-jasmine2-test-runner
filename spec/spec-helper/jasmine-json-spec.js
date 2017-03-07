@@ -1,4 +1,5 @@
 "use babel";
+/* globals zdescribe */
 
 describe("jasmine-json", function () {
 	describe("passing", function () {
@@ -25,7 +26,7 @@ describe("jasmine-json", function () {
 		});
 	});
 
-	describe("failing", function () {
+	zdescribe("failing", function () {
 		it("should fail", function () {
 			const actual = {
 				a: 1,

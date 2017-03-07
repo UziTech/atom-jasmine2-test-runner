@@ -1,5 +1,5 @@
 "use babel";
-/* globals pass */
+/* globals pass, zdescribe */
 
 import Grim from "grim";
 
@@ -40,7 +40,7 @@ describe("Jasmine 2.x", function () {
 		it("should be pending with no function");
 	});
 
-	describe("failing", function () {
+	zdescribe("failing", function () {
 		it("should fail", function () {
 			fail();
 		});
@@ -65,15 +65,13 @@ describe("Jasmine 2.x", function () {
 		});
 	});
 
-	describe("deprecated", function () {
+	zdescribe("deprecated", function () {
 		it("should report deprecation", () => {
-			pass();
 			Grim.deprecate("This has been deprecated!");
 		});
 
 		it("should report deprecation async", function (done) {
 			setTimeout(_ => {
-				pass();
 				deprecatedFunction();
 				done();
 			}, 1000);
@@ -99,16 +97,15 @@ describe("Jasmine 2.x", function () {
 			});
 		});
 
-		describe("failing", function () {
+		zdescribe("failing", function () {
 			it("should fail", function () {
 				fail();
 			});
 		});
 
-		describe("deprecated", function () {
+		zdescribe("deprecated", function () {
 			it("should be deprecated", function () {
 				deprecatedFunction();
-				pass();
 			});
 		});
 	});

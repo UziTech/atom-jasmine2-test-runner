@@ -189,6 +189,10 @@ body.minimize-specs {
 			padding: 0 10px 10px;
 			border-left: 3px solid #d9534f;
 
+			&.should-fail{
+				border-left-color: #5cb85c;
+			}
+
 			.spec-toggle {
 				.octicon(fold);
 				float: right;
@@ -221,6 +225,10 @@ body.minimize-specs {
 		font-weight: bold;
 		color: #d9534f;
 		padding: 5px 0;
+	}
+
+	.should-fail .result-message {
+		color: #5cb85c;
 	}
 
 	.result-message.deprecation-message {
