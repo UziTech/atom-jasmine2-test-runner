@@ -26,4 +26,5 @@ describe("jasmine-tagged", function () {
 	});
 });
 
+env.setIncludedTags();
 env.includeSpecsWithoutTags(true);
