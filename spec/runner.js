@@ -3,5 +3,5 @@
 import { createRunner } from "../";
 
 module.exports = createRunner({
-	showColors: false
+	specHelper: true,
 });

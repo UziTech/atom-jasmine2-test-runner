@@ -1,5 +1,4 @@
 "use babel";
-/* globals jasmine, describe, beforeEach, beforeAll, afterEach, afterAll, it, expect, fail, pending, spyOn, xit, xdescribe */
 
 import Grim from "grim";
 
