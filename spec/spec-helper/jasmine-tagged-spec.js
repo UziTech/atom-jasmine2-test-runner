@@ -4,7 +4,7 @@ const env = jasmine.getEnv();
 env.setIncludedTags(["tagged", "tags"]);
 env.includeSpecsWithoutTags(false);
 
-fdescribe("jasmine-tagged", function () {
+describe("jasmine-tagged", function () {
 	describe("passing", function () {
 		it("is #tagged", function () {
 			expect(true).toBe(true);
