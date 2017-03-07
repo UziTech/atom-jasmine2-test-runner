@@ -1,4 +1,5 @@
 "use babel";
+/* globals pass */
 
 const env = jasmine.getEnv();
 env.setIncludedTags(["tagged", "tags"]);
@@ -7,21 +8,21 @@ env.includeSpecsWithoutTags(false);
 describe("jasmine-tagged", function () {
 	describe("passing", function () {
 		it("is #tagged", function () {
-			expect(true).toBe(true);
+			pass();
 		});
 
 		it("has #multiple #tags", function () {
-			expect(true).toBe(true);
+			pass();
 		});
 	});
 
 	describe("pending", function () {
 		it("should #not run", function () {
-			expect(true).toBe(false);
+			fail();
 		});
 
 		it("has no tags", function () {
-			expect(true).toBe(false);
+			fail();
 		});
 	});
 });

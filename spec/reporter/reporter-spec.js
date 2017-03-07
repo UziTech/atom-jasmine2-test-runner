@@ -1,4 +1,5 @@
 "use babel";
+/* globals pass */
 
 import Grim from "grim";
 
@@ -15,12 +16,12 @@ describe("Jasmine 2.x", function () {
 
 	describe("passing", function () {
 		it("should pass", function () {
-			expect(true).toBe(true);
+			pass();
 		});
 
 		it("should pass async", function (done) {
 			setTimeout(_ => {
-				expect(true).toBe(true);
+				pass();
 				done();
 			}, 1000);
 		});
@@ -28,12 +29,12 @@ describe("Jasmine 2.x", function () {
 
 	describe("pending", function () {
 		xit("should be pending", function () {
-			expect(true).toBe(true);
+			pass();
 		});
 
 		it("should be pending when called", function () {
 			pending("because i called pending");
-			expect(true).toBe(true);
+			pass();
 		});
 
 		it("should be pending with no function");
@@ -41,25 +42,24 @@ describe("Jasmine 2.x", function () {
 
 	describe("failing", function () {
 		it("should fail", function () {
-			expect(true).toBe(false);
+			fail();
 		});
 
 		it("should fail async", function (done) {
 			setTimeout(_ => {
-				expect(true).toBe(false);
+				fail();
 				done();
 			}, 1000);
 		});
 
 		it("should fail when called", function () {
 			fail("because i called fail");
-			expect(true).toBe(false);
+			fail();
 		});
 
 		it("should fail when called async", function (done) {
 			setTimeout(_ => {
 				fail("because i called fail async");
-				expect(true).toBe(false);
 				done();
 			}, 1000);
 		});
@@ -67,13 +67,13 @@ describe("Jasmine 2.x", function () {
 
 	describe("deprecated", function () {
 		it("should report deprecation", () => {
-			expect(true).toBe(true);
+			pass();
 			Grim.deprecate("This has been deprecated!");
 		});
 
 		it("should report deprecation async", function (done) {
 			setTimeout(_ => {
-				expect(true).toBe(true);
+				pass();
 				deprecatedFunction();
 				done();
 			}, 1000);
@@ -81,7 +81,7 @@ describe("Jasmine 2.x", function () {
 
 		it("should report deprecation from failure", () => {
 			deprecatedFunction();
-			expect(true).toBe(false);
+			fail();
 			deprecatedFunction();
 		});
 	});
@@ -89,26 +89,26 @@ describe("Jasmine 2.x", function () {
 	describe("multiple suites", function () {
 		describe("passing", function () {
 			it("should pass", function () {
-				expect(true).toBe(true);
+				pass();
 			});
 		});
 
 		describe("pending", function () {
 			xit("should be pending", function () {
-				expect(true).toBe(true);
+				pass();
 			});
 		});
 
 		describe("failing", function () {
 			it("should fail", function () {
-				expect(true).toBe(false);
+				fail();
 			});
 		});
 
 		describe("deprecated", function () {
 			it("should be deprecated", function () {
 				deprecatedFunction();
-				expect(true).toBe(true);
+				pass();
 			});
 		});
 	});
