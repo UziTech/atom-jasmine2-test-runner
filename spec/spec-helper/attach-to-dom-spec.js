@@ -3,7 +3,7 @@ describe("attach-to-dom", function () {
 			this.jasmine2Content = document.getElementById("jasmine2-content");
 		});
 
-		it("should add jasmine.attachToDOM", function () {
+		it("should define jasmine.attachToDOM", function () {
 			expect(jasmine.attachToDOM).toEqual(jasmine.any(Function));
 		});
 

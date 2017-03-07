@@ -1,7 +1,7 @@
 /* globals pass */
 
 describe("jasmine-pass", function () {
-	it("should add pass", function () {
+	it("should define pass", function () {
 		expect(pass).toEqual(jasmine.any(Function));
 	});
 
