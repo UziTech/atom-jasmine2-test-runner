@@ -1,5 +1,4 @@
 "use babel";
-/* globals jasmine, describe, beforeEach, afterEach, it, expect, spyOn, xit, xdescribe, waitsFor, runs */
 
 // jasmine 1.3 tests https://jasmine.github.io/1.3/introduction.html
 
