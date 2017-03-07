@@ -64,7 +64,8 @@ describe("Jasmine 2.x", function () {
 			}, 1000);
 		});
 	});
-	describe("deprecations", function () {
+
+	describe("deprecated", function () {
 		it("should report deprecation", () => {
 			expect(true).toBe(true);
 			Grim.deprecate("This has been deprecated!");
@@ -104,7 +105,7 @@ describe("Jasmine 2.x", function () {
 			});
 		});
 
-		describe("deprecation", function () {
+		describe("deprecated", function () {
 			it("should be deprecated", function () {
 				deprecatedFunction();
 				expect(true).toBe(true);
