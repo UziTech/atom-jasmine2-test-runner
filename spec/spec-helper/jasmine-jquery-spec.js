@@ -1,5 +1,3 @@
-"use babel";
-
 describe("jasmine-jquery", function () {
 	it("should be loaded", function () {
 		let input = document.createElement("input");

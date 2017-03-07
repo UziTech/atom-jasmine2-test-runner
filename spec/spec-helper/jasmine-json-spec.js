@@ -1,4 +1,3 @@
-"use babel";
 /* globals zit */
 
 describe("jasmine-json", function () {

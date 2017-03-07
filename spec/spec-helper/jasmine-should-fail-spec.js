@@ -1,4 +1,3 @@
-"use babel";
 /* globals zdescribe, zit */
 
 describe("jasmine-should-fail", function () {

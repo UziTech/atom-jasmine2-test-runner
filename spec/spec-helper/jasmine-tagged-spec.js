@@ -1,4 +1,3 @@
-"use babel";
 /* globals pass */
 
 const env = jasmine.getEnv();

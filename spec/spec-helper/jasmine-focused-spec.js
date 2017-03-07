@@ -1,5 +1,3 @@
-"use babel";
-
 describe("jasmine-focused", function () {
 	it("should define ffit", function () {
 		expect(window.ffit).toEqual(jasmine.any(Function));

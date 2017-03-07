@@ -1,4 +1,3 @@
-"use babel";
 /* globals pass */
 
 describe("jasmine-pass", function () {
