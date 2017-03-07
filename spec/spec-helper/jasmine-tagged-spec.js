@@ -6,14 +6,12 @@ env.setIncludedTags(["tagged", "tags"]);
 env.includeSpecsWithoutTags(false);
 
 describe("jasmine-tagged", function () {
-	describe("passing", function () {
-		it("is #tagged", function () {
-			pass();
-		});
+	it("is #tagged", function () {
+		pass();
+	});
 
-		it("has #multiple #tags", function () {
-			pass();
-		});
+	it("has #multiple #tags", function () {
+		pass();
 	});
 
 	describe("pending", function () {

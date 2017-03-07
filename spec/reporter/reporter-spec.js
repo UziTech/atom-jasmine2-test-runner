@@ -29,12 +29,12 @@ describe("Jasmine 2.x", function () {
 
 	describe("pending", function () {
 		xit("should be pending", function () {
-			pass();
+			fail();
 		});
 
 		it("should be pending when called", function () {
 			pending("because i called pending");
-			pass();
+			fail();
 		});
 
 		it("should be pending with no function");
@@ -54,7 +54,6 @@ describe("Jasmine 2.x", function () {
 
 		it("should fail when called", function () {
 			fail("because i called fail");
-			fail();
 		});
 
 		it("should fail when called async", function (done) {
@@ -93,7 +92,7 @@ describe("Jasmine 2.x", function () {
 
 		describe("pending", function () {
 			xit("should be pending", function () {
-				pass();
+				fail();
 			});
 		});
 
