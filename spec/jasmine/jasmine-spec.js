@@ -2,6 +2,10 @@
 
 // jasmine 2.5 tests https://jasmine.github.io/2.5/introduction.html
 
+beforeEach(function () {
+	jasmine.useRealClock();
+});
+
 describe("A suite", function () {
 	it("contains spec with an expectation", function () {
 		expect(true).toBe(true);
