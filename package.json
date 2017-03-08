@@ -6,7 +6,7 @@
   "main": "index.js",
   "atomTestRunner": "./spec/runner",
   "scripts": {
-    "test": "atom --test ./tests"
+    "test": "atom --test ./spec"
   },
   "keywords": [
     "atom",
@@ -16,7 +16,6 @@
   "author": "Tony Brix",
   "license": "MIT",
   "dependencies": {
-    "etch": "^0.9.0",
     "find-parent-dir": "^0.3.0",
     "glob": "^7.1.1",
     "grim": "^2.0.1",
