@@ -1,5 +1,15 @@
 // converted from https://github.com/atom/atom/blob/master/static/jasmine.less
 @import "octicon-mixins";
+@background-color: hsl(0, 0%, 98%);
+@tab-color: #7282a1;
+@tab-active-color: #4372d0;
+@tab-not-active-color: #5587ec;
+@tab-not-active-background-color: #a5b3cf;
+
+@passed-color: #5cb85c;
+@failed-color: #d9534f;
+@skipped-color: #f0ad4e;
+@pending-color: #eee;
 
 body {
 	padding: 0;
@@ -23,17 +33,17 @@ body {
 		display: inline-block;
 		height: 18px;
 		z-index: 99996;
-		background-color: hsl(0, 0%, 98%);
+		background-color: @background-color;
 		padding: 0 5px;
 		border-radius: 3px 3px 0 0;
 		cursor: pointer;
 		box-shadow: 0 1px 1px 0 #fff;
 		font-weight: bold;
-		color: #7282a1;
+		color: @tab-color;
 
 		&.active {
 			top: 0;
-			color: #4372d0;
+			color: @tab-active-color;
 			z-index: 99997;
 			box-shadow: 0 0 10px 5px #333;
 			cursor: default;
@@ -44,8 +54,8 @@ body {
 		}
 
 		&.not-available {
-			color: #5587ec;
-			background-color: #a5b3cf;
+			color: @tab-not-active-color;
+			background-color: @tab-not-active-background-color;
 			cursor: default;
 		}
 	}
@@ -86,7 +96,7 @@ body.minimize-specs {
 	font-size: 11px;
 	line-height: 1.6em;
 	color: #333;
-	background-color: hsl(0, 0%, 98%);
+	background-color: @background-color;
 	// 578px initial window height, resize to see underlying editor
 	@media (min-height: 578px) {
 		flex: 0 1 75%;
@@ -129,25 +139,34 @@ body.minimize-specs {
 			height: 10px;
 			width: 10px;
 			font-size: 10px;
+			overflow: hidden;
 
 			&.passed {
-				color: #5cb85c;
+				color: @passed-color;
 			}
 
 			&.failed {
-				color: #d9534f;
+				color: @failed-color;
 			}
 
 			&.skipped {
-				color: #f0ad4e;
+				color: @skipped-color;
 			}
 
 			&.pending {
-				color: #eee;
+				color: @pending-color;
 			}
 
 			&::before {
 				content: "\02022";
+				text-align: center;
+				display: block;
+				will-change: transform;
+				transition: transform 0.5s;
+			}
+
+			&:hover::before {
+				transform: scale(3);
 			}
 		}
 	}
@@ -187,10 +206,10 @@ body.minimize-specs {
 		.spec {
 			margin-top: 5px;
 			padding: 0 10px 10px;
-			border-left: 3px solid #d9534f;
+			border-left: 3px solid @failed-color;
 
-			&.should-fail{
-				border-left-color: #5cb85c;
+			&.should-fail {
+				border-left-color: @passed-color;
 			}
 
 			.spec-toggle {
@@ -223,26 +242,26 @@ body.minimize-specs {
 	.result-message {
 		font-size: 16px;
 		font-weight: bold;
-		color: #d9534f;
+		color: @failed-color;
 		padding: 5px 0;
 	}
 
 	.should-fail .result-message {
-		color: #5cb85c;
+		color: @passed-color;
 	}
 
 	.result-message.deprecation-message {
 		font-weight: normal;
-		color: darken(#f0ad4e, 20%);
+		color: darken(@skipped-color, 20%);
 		line-height: 1.4;
 
 		a {
-			color: darken(#f0ad4e, 15%);
+			color: darken(@skipped-color, 15%);
 		}
 
 		code {
-			color: darken(#f0ad4e, 20%);
-			background: lighten(#f0ad4e, 35%);
+			color: darken(@skipped-color, 20%);
+			background: lighten(@skipped-color, 35%);
 		}
 	}
 
