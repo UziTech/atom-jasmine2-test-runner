@@ -1,4 +1,5 @@
 "use babel";
+/* globals zdescribe */
 
 import Grim from "grim";
 
@@ -33,7 +34,7 @@ describe("Jasmine 1.x", function () {
 		});
 	});
 
-	describe("failing", function () {
+	zdescribe("failing", function () {
 		it("should fail", function () {
 			expect(true).toBe(false);
 		});
@@ -48,7 +49,7 @@ describe("Jasmine 1.x", function () {
 		});
 	});
 
-	describe("deprecated", function () {
+	zdescribe("deprecated", function () {
 		it("should report deprecation", function () {
 			expect(true).toBe(true);
 			Grim.deprecate("This has been deprecated!");
@@ -84,13 +85,13 @@ describe("Jasmine 1.x", function () {
 			});
 		});
 
-		describe("failing", function () {
+		zdescribe("failing", function () {
 			it("should fail", function () {
 				expect(true).toBe(false);
 			});
 		});
 
-		describe("deprecated", function () {
+		zdescribe("deprecated", function () {
 			it("should be deprecated", function () {
 				deprecatedFunction();
 				expect(true).toBe(true);
