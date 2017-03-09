@@ -11,7 +11,7 @@ describe("set", function () {
 		expect(set1.isEqual(set2)).toBe(false);
 	});
 
-	it("should ", function () {
+	it("should create a string", function () {
 		const set1 = new Set([1, 2, 3, 4, 5]);
 		expect(set1.jasmineToString()).toBe("Set {1, 2, 3, 4, 5}");
 	});
