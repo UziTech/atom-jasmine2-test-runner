@@ -2,6 +2,6 @@
 
 import { createRunner } from "../";
 
-module.exports = createRunner({
+export default createRunner({
 	specHelper: true,
 });
