@@ -1,8 +1,10 @@
 /* globals pass */
 
 const env = jasmine.getEnv();
-env.setIncludedTags(["tagged", "tags"]);
-env.includeSpecsWithoutTags(false);
+if (env.setIncludedTags) {
+	env.setIncludedTags(["tagged", "tags"]);
+	env.includeSpecsWithoutTags(false);
+}
 
 describe("jasmine-tagged", function () {
 	it("is #tagged", function () {
@@ -24,5 +26,7 @@ describe("jasmine-tagged", function () {
 	});
 });
 
-env.setIncludedTags();
-env.includeSpecsWithoutTags(true);
+if (env.setIncludedTags) {
+	env.setIncludedTags();
+	env.includeSpecsWithoutTags(true);
+}
