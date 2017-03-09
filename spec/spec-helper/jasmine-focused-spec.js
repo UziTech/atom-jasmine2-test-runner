@@ -18,7 +18,9 @@ describe("jasmine-focused", function () {
 	});
 
 	it("should allow timeout as third parameter", function (done) {
-		jasmine.useRealClock();
+		if (jasmine.useRealClock) {
+			jasmine.useRealClock();
+		}
 		setTimeout(function () {
 			pass();
 			done();
