@@ -253,3 +253,7 @@ describe('Testing', function () {
   });
 });
 ```
+
+# Credits
+
+A huge thank you to @BinaryMuse for creating [atom-mocha-test-runner](https://github.com/BinaryMuse/atom-mocha-test-runner) and giving me a place to start.
