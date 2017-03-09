@@ -221,6 +221,13 @@ This includes the functions `mockLocalStorage()` and `unmockLocalStorage()` to a
 
 You will have to call the `mockLocalStorage()` function in-order to start mocking localStorage.
 
+##### Pathwatcher
+```
+  pathwatcher: true
+```
+
+This will include the [pathwatcher](https://www.npmjs.com/package/pathwatcher) module and try to warn you about any leaking subscriptions for paths after each test
+
 ##### Profile
 ```
   profile: true
