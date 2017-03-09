@@ -3,6 +3,15 @@
 import path from "path";
 
 describe("matchers", function () {
+	beforeEach(function () {
+		this.domContainer = document.createElement("div");
+		this.domContainer.id = "matchers-specs-container";
+		document.body.appendChild(this.domContainer);
+	});
+
+	afterEach(function () {
+		this.domContainer.remove()
+	});
 	describe("passing", function () {
 		it("should define toBeInstanceOf", function () {
 			expect([]).toBeInstanceOf(Array);
@@ -22,8 +31,8 @@ describe("matchers", function () {
 		it("should define toHaveFocus", function () {
 			const input1 = document.createElement("input");
 			const input2 = document.createElement("input");
-			jasmine.attachToDOM(input1);
-			jasmine.attachToDOM(input2);
+			this.domContainer.appendChild(input1);
+			this.domContainer.appendChild(input2);
 			input1.focus();
 			expect(input1).toHaveFocus();
 			expect(input2).not.toHaveFocus();
@@ -34,8 +43,8 @@ describe("matchers", function () {
 			const div2 = document.createElement("div");
 			div1.style.display = "block";
 			div2.style.display = "none";
-			jasmine.attachToDOM(div1);
-			jasmine.attachToDOM(div2);
+			this.domContainer.appendChild(div1);
+			this.domContainer.appendChild(div2);
 			expect(div1).toShow();
 			expect(div2).not.toShow();
 		});
@@ -67,8 +76,8 @@ describe("matchers", function () {
 		it("should define toHaveFocus", function () {
 			const input1 = document.createElement("input");
 			const input2 = document.createElement("input");
-			jasmine.attachToDOM(input1);
-			jasmine.attachToDOM(input2);
+			this.domContainer.appendChild(input1);
+			this.domContainer.appendChild(input2);
 			input1.focus();
 			expect(input1).not.toHaveFocus();
 			expect(input2).toHaveFocus();
@@ -79,8 +88,8 @@ describe("matchers", function () {
 			const div2 = document.createElement("div");
 			div1.style.display = "block";
 			div2.style.display = "none";
-			jasmine.attachToDOM(div1);
-			jasmine.attachToDOM(div2);
+			this.domContainer.appendChild(div1);
+			this.domContainer.appendChild(div2);
 			expect(div1).not.toShow();
 			expect(div2).toShow();
 		});

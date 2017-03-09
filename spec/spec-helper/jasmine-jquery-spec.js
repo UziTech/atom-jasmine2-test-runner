@@ -4,14 +4,18 @@ import $ from "jquery";
 
 describe("jasmine-jquery", function () {
 	beforeEach(function () {
+		this.domContainer = $("<div id='jasmine-jquery-specs-container' />").appendTo("body");
 		this.tag = (tag) => {
 			let $el = $("<" + tag + " />");
 			$el.attach = _ => {
-				jasmine.attachToDOM($el[0]);
-				return $el;
+				return $el.appendTo(this.domContainer);
 			};
 			return $el;
 		};
+	});
+
+	afterEach(function () {
+		this.domContainer.remove();
 	});
 
 	describe("functions", function () {
@@ -309,7 +313,7 @@ describe("jasmine-jquery", function () {
 			});
 
 			it("should define toHaveData", function () {
-				const div = this.tag("div").data({test: "this"});
+				const div = this.tag("div").data({ test: "this" });
 				expect(div).not.toHaveData("test");
 				expect(div).not.toHaveData("test", "this");
 				expect(div).toHaveData("that");
