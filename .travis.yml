@@ -23,7 +23,7 @@ script:
 notifications:
   email:
     on_success: never
-    on_failure: tony@brix.ninja
+    on_failure: change
 
 branches:
   only:
