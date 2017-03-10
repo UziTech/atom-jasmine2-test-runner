@@ -96,8 +96,20 @@ Example:
 ```javascript
 {
   specHelper: {
+    atom: true,
+    attachToDom: true,
+    ci: true,
+    customMatchers: true,
+    jasmineFocused: true,
     jasmineJquery: true,
-    clock: true
+    jasmineJson: true,
+    jasminePass: true,
+    jasmineTagged: true,
+    mockClock: true,
+    mockLocalStorage: true,
+    profile: true,
+    set: true,
+    unspy: true
   }
 }
 ```
