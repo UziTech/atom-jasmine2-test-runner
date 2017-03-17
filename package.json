@@ -20,7 +20,9 @@
     "glob": "^7.1.1",
     "grim": "^2.0.1",
     "jasmine": "^2.5.3",
+    "jasmine-should-fail": "^1.0.1",
     "jasmine2-focused": "^1.0.0",
+    "jasmine2-json": "^1.0.1",
     "jquery": "^3.1.1",
     "underscore-plus": "^1.6.6"
   }
