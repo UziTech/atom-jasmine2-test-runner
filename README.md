@@ -202,7 +202,7 @@ This will include the functions `zdescribe` and `zit` to allow you to tell jasmi
 
 If these tests pass they will fail and if they fail they will pass but still output their messages as if they failed.
 
-(really only useful for testing a reporter)
+(really only useful for testing a reporter or matcher)
 
 ##### Jasmine Tagged
 ```
