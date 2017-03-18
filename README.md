@@ -261,7 +261,7 @@ This will include the methods `.jasmineToString()` and `.isEqual(Set)` to the `S
   unspy: true
 ```
 
-This will include the function `unspy(object, method)` to allow you to restore the original function to a spy
+This will include the function `jasmine.unspy(object, method)` to allow you to restore the original function to a spy
 
 ### Writing Tests
 

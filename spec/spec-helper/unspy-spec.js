@@ -6,7 +6,7 @@ describe("unspy", function () {
 	it("should remove the spy", function () {
 		spyOn(this.obj, "method");
 		expect(jasmine.isSpy(this.obj.method)).toBe(true);
-		unspy(this.obj, "method");
+		jasmine.unspy(this.obj, "method");
 		expect(jasmine.isSpy(this.obj.method)).toBe(false);
 	});
 
@@ -16,7 +16,7 @@ describe("unspy", function () {
 		spyOn(this.obj, "method");
 		this.obj.method();
 		expect(this.count).toBe(1);
-		unspy(this.obj, "method");
+		jasmine.unspy(this.obj, "method");
 		this.obj.method();
 		expect(this.count).toBe(2);
 	});
@@ -25,7 +25,7 @@ describe("unspy", function () {
 		spyOn(this.obj, "method");
 		this.obj.method = function () {};
 		spyOn(this.obj, "method");
-		unspy(this.obj, "method");
+		jasmine.unspy(this.obj, "method");
 		this.obj.method();
 		expect(this.count).toBe(1);
 	});
