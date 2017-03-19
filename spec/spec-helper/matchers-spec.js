@@ -1,4 +1,5 @@
 "use babel";
+/* globals zdescribe */
 
 import path from "path";
 
@@ -10,7 +11,7 @@ describe("matchers", function () {
 	});
 
 	afterEach(function () {
-		this.domContainer.remove()
+		this.domContainer.remove();
 	});
 	describe("passing", function () {
 		it("should define toBeInstanceOf", function () {

@@ -1,4 +1,5 @@
 "use babel";
+/* globals zdescribe */
 
 import $ from "jquery";
 
