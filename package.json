@@ -23,6 +23,7 @@
     "jasmine-pass": "^1.0.0",
     "jasmine-should-fail": "^1.0.1",
     "jasmine-unspy": "^1.0.0",
+    "jasmine2-atom-matchers": "^1.0.0",
     "jasmine2-focused": "^1.0.0",
     "jasmine2-json": "^1.0.1",
     "jasmine2-tagged": "^1.0.0",

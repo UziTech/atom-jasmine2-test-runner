@@ -101,7 +101,6 @@ Example:
     ci: true,
     customMatchers: true,
     jasmineFocused: true,
-    jasmineJquery: true,
     jasmineJson: true,
     jasminePass: true,
     jasmineTagged: true,
@@ -157,6 +156,8 @@ This will add the [custom matchers](http://flight-manual.atom.io/hacking-atom/se
 - The `toHaveFocus` matcher checks if the element currently has focus
 - The `toShow` matcher tests if the element is visible in the dom
 
+This will also include the Atom custom version of [jasmine-jquery](https://github.com/atom/atom/blob/master/vendor/jasmine-jquery.js)
+
 ##### Jasmine Focused
 ```
   jasmineFocused: true
@@ -165,17 +166,6 @@ This will add the [custom matchers](http://flight-manual.atom.io/hacking-atom/se
 This will include [jasmine-focused](https://github.com/atom/jasmine-focused#readme) (modified for Jasmine 2.x)
 
 This includes the functions `ffdescribe`, `fffdescribe`, `ffit`, and `fffit`.
-
-##### Jasmine jQuery
-```
-  jasmineJquery: true
-```
-
-This will include [jasmine-jquery](https://github.com/atom/atom/blob/master/vendor/jasmine-jquery.js)
-
-:rotating_light: This includes the custom version from Atom (modified for Jasmine 2.x) **_NOT_** the latest version from NPM :rotating_light:
-
-If you want the latest version of jasmine-jquery you can save it as a dev dependency and import it into your tests.
 
 ##### Jasmine JSON
 ```
