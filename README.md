@@ -144,6 +144,28 @@ This will throw an error if any focused tests are left when testing in a CI envi
 
 This will also set `jasmine.DEFAULT_TIMEOUT_INTERVAL` to 1 minute in a CI environment.
 
+:rotating_light: This won't do anything unless `process.env.CI` is set :rotating_light:
+
+```yml
+# .travis.yml
+env:
+  global:
+    - CI="true"
+```
+
+```yml
+# appveyor.yml
+environment:
+  CI: "true"
+```
+
+```yml
+# circle.yml
+machine:
+  environment:
+    CI: "true"
+```
+
 ##### Custom Matchers
 ```
   customMatchers: true
