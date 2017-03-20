@@ -103,6 +103,7 @@ Example:
     jasmineFocused: true,
     jasmineJson: true,
     jasminePass: true,
+    jasminePromises: true,
     jasmineTagged: true,
     mockClock: true,
     mockLocalStorage: true,
@@ -148,6 +149,8 @@ This will also set `jasmine.DEFAULT_TIMEOUT_INTERVAL` to 1 minute in a CI enviro
   customMatchers: true
 ```
 
+Uses [jasmine2-atom-matchers](https://github.com/UziTech/jasmine2-atom-matchers)
+
 This will add the [custom matchers](http://flight-manual.atom.io/hacking-atom/sections/writing-specs/#custom-matchers) from Atom:
 
 - The `toBeInstanceOf` matcher is for the `instanceof` operator
@@ -163,6 +166,8 @@ This will also include the Atom custom version of [jasmine-jquery](https://githu
   jasmineFocused: true
 ```
 
+Uses [jasmine2-focused](https://github.com/UziTech/jasmine2-focused)
+
 This will include [jasmine-focused](https://github.com/atom/jasmine-focused#readme) (modified for Jasmine 2.x)
 
 This includes the functions `ffdescribe`, `fffdescribe`, `ffit`, and `fffit`.
@@ -171,6 +176,8 @@ This includes the functions `ffdescribe`, `fffdescribe`, `ffit`, and `fffit`.
 ```
   jasmineJson: true
 ```
+
+Uses [jasmine2-json](https://github.com/UziTech/jasmine2-json)
 
 This will include [jasmine-json](https://github.com/atom/jasmine-json#readme) (modified for Jasmine 2.x)
 
@@ -181,12 +188,43 @@ This includes the matcher `.toEqualJson(object)` and will give a detailed messag
   jasminePass: true
 ```
 
+Uses [jasmine-pass](https://github.com/UziTech/jasmine-pass)
+
 This will include a `pass()` function similar to Jasmine's `fail()` but opposite.
+
+##### Jasmine Promises
+
+Uses [jasmine-promises](https://github.com/matthewjh/jasmine-promises)
+
+This will allow any jasmine function (i.e. beforeEach, afterEach, it, describe, etc.) to execute a function that returns a promise and not finish until the promise is resolved.
+
+Normal async function
+```js
+it("will not complete until done() is called", function (done) {
+  asyncFunctionThatReturnsAPromise().then(done, done);
+});
+```
+
+Promise async function
+```js
+it("will not complete until the retuned promise is resolved", function () {
+  return asyncFunctionThatReturnsAPromise();
+});
+```
+
+async/await async function
+```js
+it("will not complete until the async function is complete", async function () {
+  await asyncFunctionThatReturnsAPromise();
+});
+```
 
 ##### Jasmine Should Fail
 ```
   jasmineShouldFail: true
 ```
+
+Uses [jasmine-should-fail](https://github.com/UziTech/jasmine-should-fail)
 
 This will include the functions `zdescribe` and `zit` to allow you to tell jasmine that these tests should fail.
 
@@ -198,6 +236,8 @@ If these tests pass they will fail and if they fail they will pass but still out
 ```
   jasmineTagged: true
 ```
+
+Uses [jasmine2-tagged](https://github.com/UziTech/jasmine2-tagged)
 
 This will include [jasmine-tagged](https://github.com/atom/jasmine-tagged#readme) (modified for Jasmine 2.x)
 
@@ -250,6 +290,8 @@ This will include the methods `.jasmineToString()` and `.isEqual(Set)` to the `S
 ```
   unspy: true
 ```
+
+Uses [jasmine-unspy](https://github.com/UziTech/jasmine-unspy)
 
 This will include the function `jasmine.unspy(object, method)` to allow you to restore the original function to a spy
 
