@@ -1,5 +1,5 @@
 "use babel";
-/* globals zdescribe */
+/* globals zdescribe, zit */
 
 import Grim from "grim";
 
@@ -32,6 +32,10 @@ describe("Jasmine 1.x", function () {
 		xit("should be pending", function () {
 			expect(true).toBe(true);
 		});
+	});
+
+	zit("should have 8 failures", function () {
+		expect(true).toBe(false);
 	});
 
 	zdescribe("failing", function () {
