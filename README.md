@@ -64,6 +64,22 @@ const optionalConfigurationFunction = function() {
   // so you can do whatever you'd like with the global variables.
   // (i.e. add custom matchers, require plugins, etc.)
   require("some-jasmine-plugin");
+
+  beforeEach(function () {
+    jasmine.addMatchers({
+      toBeTheAnswerToTheUltimateQuestionOfLifeTheUniverseAndEverything: function (util, customEqualityTesters) {
+        return {
+          compare: function (actual) {
+            let result = {};
+            result.pass = util.equals(actual, 42, customEqualityTesters);
+            const toBeOrNotToBe = (result.pass ? "not to be" : "to be");
+            result.message = `Expected ${actual} ${toBeOrNotToBe} the answer to the ultimate question of life, the universe, and everything.`;
+            return result;
+          }
+        };
+      }
+    });
+  });
 }
 
 module.exports = createRunner(extraOptions, optionalConfigurationFunction);
@@ -325,7 +341,7 @@ This will include the function `jasmine.unspy(object, method)` to allow you to r
 ```javascript
 describe('Testing', function () {
   it('works', function () {
-    expect(answerToLifeUniverseAndEverything).toBe(42);
+    expect(thisVariable).toBeTheAnswerToTheUltimateQuestionOfLifeTheUniverseAndEverything();
   });
 });
 ```
