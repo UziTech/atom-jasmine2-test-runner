@@ -72,7 +72,7 @@ const optionalConfigurationFunction = function() {
           compare: function (actual) {
             let result = {};
             result.pass = util.equals(actual, 42, customEqualityTesters);
-            const toBeOrNotToBe = (result.pass ? "not to be" : "to be");
+            const toBeOrNotToBe = (result.pass ? "not to be" : "to be"); // that is the question.
             result.message = `Expected ${actual} ${toBeOrNotToBe} the answer to the ultimate question of life, the universe, and everything.`;
             return result;
           }
@@ -105,9 +105,9 @@ Returns a test runner created with the given `options` and `callback`. Both para
 #### Spec Helpers
 This will inlude Atom's [spec-helper](http://flight-manual.atom.io/hacking-atom/sections/writing-specs/#custom-matchers).
 
-:construction::rotating_light: Some things might not work the same way they did before. :rotating_light::construction:
+:construction::rotating_light: This is experimental. Some things might not work the same way they are supposed to. :rotating_light::construction:
 
-The `specHelper` option can be set to `true` or `false` to enable or disable the spec-helper or you can specify an object enabling only the parts of the spec-helper that you want.
+The `specHelper` option can be set to `true` to enable the spec-helper or you can specify an object enabling only the parts of the spec-helper that you want.
 
 Example:
 ```javascript
