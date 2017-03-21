@@ -48,10 +48,10 @@ If you'd like to perform more customization of your testing environment, you can
 }
 ```
 
-Then export a test runner created via the atom-jasmine2-test-runner from `test/custom-runner.js`:
+Then export a test runner created via the atom-jasmine2-test-runner from `./spec/custom-runner.js`:
 
 ```javascript
-const { createRunner}  = require('atom-jasmine2-test-runner');
+const { createRunner} = require('atom-jasmine2-test-runner');
 
 // optional options to customize the runner
 const extraOptions = {
@@ -63,9 +63,10 @@ const optionalConfigurationFunction = function() {
   // If provided, atom-jasmine2-test-runner will call this function before jasmine is started
   // so you can do whatever you'd like with the global variables.
   // (i.e. add custom matchers, require plugins, etc.)
+  require("some-jasmine-plugin");
 }
 
-module.exports = createRunner(extraOptions, optionalConfigurationFunction)
+module.exports = createRunner(extraOptions, optionalConfigurationFunction);
 ```
 
 #### API
@@ -74,16 +75,16 @@ module.exports = createRunner(extraOptions, optionalConfigurationFunction)
 
 Returns a test runner created with the given `options` and `callback`. Both parameters are optional. The returned value can be exported from your `atomTestRunner` script for Atom to consume.
 
-- `options` - An object specifying customized options:
+-   `options` - An object specifying customized options:
 
-  - `reporter` `[default: the default reporter]` - Which reporter to use on the terminal
-  - `suffix` `[default: "-spec"]` - File extension that indicates that the file contains tests
-  - `legacySuffix` `[default: "-spec-v1"]` - File extension that indicates that the file contains Jasmine v1.x tests
-  - `showColors` `[default: true]` - Whether or not to colorize output on the terminal
-  - `htmlTitle` `[default: The name of the package]` - The string to use for the window title in the HTML reporter
-  - `showEditor` `[default: false]` - Whether or not to add a "Show Editor" tab to minimize the specs so you can see the editor behind it
-  - `timeReporter` `[default: false]` - Add a reporter that logs the time for each spec/suite. [TimeReporter](https://github.com/atom/atom/blob/master/spec/time-reporter.coffee)
-  - `specHelper` `[default: false]` - See [Spec Helpers](#spec-helpers)
+    -   `reporter` `[default: the default reporter]` - Which reporter to use on the terminal
+    -   `suffix` `[default: "-spec"]` - File extension that indicates that the file contains tests
+    -   `legacySuffix` `[default: "-spec-v1"]` - File extension that indicates that the file contains Jasmine v1.x tests
+    -   `showColors` `[default: true]` - Whether or not to colorize output on the terminal
+    -   `htmlTitle` `[default: The name of the package]` - The string to use for the window title in the HTML reporter
+    -   `showEditor` `[default: false]` - Whether or not to add a "Show Editor" tab to minimize the specs so you can see the editor behind it
+    -   `timeReporter` `[default: false]` - Add a reporter that logs the time for each spec/suite. [TimeReporter](https://github.com/atom/atom/blob/master/spec/time-reporter.coffee)
+    -   `specHelper` `[default: false]` - See [Spec Helpers](#spec-helpers)
 
 #### Spec Helpers
 This will inlude Atom's [spec-helper](http://flight-manual.atom.io/hacking-atom/sections/writing-specs/#custom-matchers).
@@ -94,7 +95,7 @@ The `specHelper` option can be set to `true` or `false` to enable or disable the
 
 Example:
 ```javascript
-{
+const options = {
   specHelper: {
     atom: true,
     attachToDom: true,
@@ -123,17 +124,17 @@ These are the possible options for `specHelper`
 
 This will spy on `atom.menu.sendToBrowserProcess` and add default config options:
 
-- atom.config.set("core.destroyEmptyPanes", false)
-- atom.config.set("editor.fontFamily", "Courier")
-- atom.config.set("editor.fontSize", 16)
-- atom.config.set("editor.autoIndent", false)
+-   atom.config.set("core.destroyEmptyPanes", false)
+-   atom.config.set("editor.fontFamily", "Courier")
+-   atom.config.set("editor.fontSize", 16)
+-   atom.config.set("editor.autoIndent", false)
 
 ##### Attach To DOM
 ```
   attachToDom: true
 ```
 
-This will add the function `jasmine.attachToDom(element)` to allow you to easily attach elements to the DOM and it takes care of removing the after every test so you don't need to worry about them messing with your other tests. If you want an element to be attached to the DOM for multiple tests you can call `jasmine.attachToDOM` in a `beforeEach` function.
+This will add the function `jasmine.attachToDOM(element)` to allow you to easily attach elements to the DOM and it takes care of removing the elements after every test so you don't need to worry about them messing with your other tests. If you want an element to be attached to the DOM for multiple tests you can call `jasmine.attachToDOM` in a `beforeEach` function.
 
 ##### CI
 ```
@@ -175,11 +176,11 @@ Uses [jasmine2-atom-matchers](https://github.com/UziTech/jasmine2-atom-matchers)
 
 This will add the [custom matchers](http://flight-manual.atom.io/hacking-atom/sections/writing-specs/#custom-matchers) from Atom:
 
-- The `toBeInstanceOf` matcher is for the `instanceof` operator
-- The `toHaveLength` matcher compares against the `.length` property
-- The `toExistOnDisk` matcher checks if the file exists in the filesystem
-- The `toHaveFocus` matcher checks if the element currently has focus
-- The `toShow` matcher tests if the element is visible in the dom
+-   The `toBeInstanceOf` matcher is for the `instanceof` operator
+-   The `toHaveLength` matcher compares against the `.length` property
+-   The `toExistOnDisk` matcher checks if the file exists in the filesystem
+-   The `toHaveFocus` matcher checks if the element currently has focus
+-   The `toShow` matcher tests if the element is visible in the dom
 
 This will also include the Atom custom version of [jasmine-jquery](https://github.com/atom/atom/blob/master/vendor/jasmine-jquery.js)
 
