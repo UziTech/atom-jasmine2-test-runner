@@ -11,4 +11,8 @@ describe("fixtures", function () {
 	it("should resolve this package to this path", function () {
 		expect(path.resolve(atom.packages.resolvePackagePath("atom-jasmine2-test-runner"))).toBe(path.resolve(__dirname, "../../"));
 	});
+
+	it("should resolve a regular package", function () {
+		expect(_ => { path.resolve(atom.packages.resolvePackagePath("tree-view")); }).not.toThrow();
+	});
 });
