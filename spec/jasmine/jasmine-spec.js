@@ -595,7 +595,7 @@ describe("Jasmine 2.x", function () {
 		it("can provide the context and arguments to all calls", function () {
 			foo.setBar(123);
 			let undef;
-			expect(foo.setBar.calls.all()).toEqual([{ object: foo, args: [123], returnValue: undef }]);
+			expect(foo.setBar.calls.all()).toEqual([jasmine.objectContaining({ object: foo, args: [123], returnValue: undef })]);
 		});
 
 		it("has a shortcut to the most recent call", function () {
@@ -603,7 +603,7 @@ describe("Jasmine 2.x", function () {
 			foo.setBar(456, "baz");
 
 			let undef;
-			expect(foo.setBar.calls.mostRecent()).toEqual({ object: foo, args: [456, "baz"], returnValue: undef });
+			expect(foo.setBar.calls.mostRecent()).toEqual(jasmine.objectContaining({ object: foo, args: [456, "baz"], returnValue: undef }));
 		});
 
 		it("has a shortcut to the first call", function () {
@@ -611,7 +611,7 @@ describe("Jasmine 2.x", function () {
 			foo.setBar(456, "baz");
 
 			let undef;
-			expect(foo.setBar.calls.first()).toEqual({ object: foo, args: [123], returnValue: undef });
+			expect(foo.setBar.calls.first()).toEqual(jasmine.objectContaining({ object: foo, args: [123], returnValue: undef }));
 		});
 
 		it("tracks the context", function () {
