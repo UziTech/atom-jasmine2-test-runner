@@ -307,8 +307,6 @@ You will have to call the `mockLocalStorage()` function in-order to start mockin
   pathwatcher: true
 ```
 
-:rotating_light: This does not work at the moment :rotating_light:
-
 This will include the [pathwatcher](https://www.npmjs.com/package/pathwatcher) module and try to warn you about any leaking subscriptions for paths after each test
 
 ##### Profile
