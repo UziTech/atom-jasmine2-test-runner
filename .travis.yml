@@ -15,6 +15,8 @@ os:
   - linux
   - osx
 
+dist: trusty
+
 ### Generic setup follows ###
 script:
   - curl -s -O https://raw.githubusercontent.com/atom/ci/master/build-package.sh
@@ -42,3 +44,4 @@ addons:
     - git
     - libgnome-keyring-dev
     - fakeroot
+    - libsecret-1-dev
