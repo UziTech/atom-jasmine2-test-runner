@@ -1,5 +1,4 @@
 "use babel";
-/* globals zdescribe */
 
 import path from "path";
 

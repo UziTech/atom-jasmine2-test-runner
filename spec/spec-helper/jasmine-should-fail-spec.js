@@ -1,5 +1,3 @@
-/* globals zdescribe, zit */
-
 describe("jasmine-should-fail", function () {
 	it("should define zdescribe", function () {
 		expect(zdescribe).toEqual(jasmine.any(Function));

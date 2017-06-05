@@ -1,5 +1,4 @@
 "use babel";
-/* globals pass, zdescribe */
 
 import Grim from "grim";
 

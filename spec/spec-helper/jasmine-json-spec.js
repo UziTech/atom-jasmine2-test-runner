@@ -1,5 +1,3 @@
-/* globals zit */
-
 describe("jasmine-json", function () {
 	it("should pass", function () {
 		const actual = {

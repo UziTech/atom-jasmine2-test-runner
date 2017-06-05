@@ -1,5 +1,3 @@
-/* globals atom */
-
 describe("atom", function () {
 	it("should spy on atom.menu.sendToBrowserProcess", function () {
 		expect(jasmine.isSpy(atom.menu.sendToBrowserProcess)).toBe(true);

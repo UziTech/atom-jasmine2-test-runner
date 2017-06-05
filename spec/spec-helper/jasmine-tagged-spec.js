@@ -1,5 +1,3 @@
-/* globals pass */
-
 const env = jasmine.getEnv();
 if (env.setIncludedTags) {
 	env.setIncludedTags(["tagged", "tags"]);
