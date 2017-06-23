@@ -291,7 +291,7 @@ This will mock the `setTimeout` and `setInterval` functions, as well as a few ot
 
 When this is enabled you will need to call `jasmine.useRealClock()` if you want to use `setTimeout` or `setInterval` like usual.
 
-This is similar to calling [jasmine.clock().install()](https://jasmine.github.io/2.5/introduction#section-Jasmine_Clock)
+This is similar to calling [jasmine.clock().install()](https://jasmine.github.io/2.6/introduction#section-Jasmine_Clock)
 
 ##### Mock Local Storage
 ```
