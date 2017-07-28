@@ -51,7 +51,7 @@ If you'd like to perform more customization of your testing environment, you can
 Then export a test runner created via the atom-jasmine2-test-runner from `./spec/custom-runner.js`:
 
 ```javascript
-const { createRunner} = require('atom-jasmine2-test-runner');
+const { createRunner } = require('atom-jasmine2-test-runner');
 
 // optional options to customize the runner
 const extraOptions = {
@@ -103,9 +103,9 @@ Returns a test runner created with the given `options` and `callback`. Both para
     -   `specHelper` `[default: false]` - See [Spec Helpers](#spec-helpers)
 
 #### Spec Helpers
-This will inlude Atom's [spec-helper](http://flight-manual.atom.io/hacking-atom/sections/writing-specs/#custom-matchers).
+This will include Atom's [spec-helper](http://flight-manual.atom.io/hacking-atom/sections/writing-specs/#custom-matchers).
 
-:construction::rotating_light: This is experimental. Some things might not work the same way they are supposed to. :rotating_light::construction:
+:construction::rotating_light: This is experimental. Some things might not work the way they are supposed to. :rotating_light::construction:
 
 The `specHelper` option can be set to `true` to enable the spec-helper or you can specify an object enabling only the parts of the spec-helper that you want.
 
@@ -139,10 +139,12 @@ These are the possible options for `specHelper`
 
 This will spy on `atom.menu.sendToBrowserProcess` and add default config options:
 
--   atom.config.set("core.destroyEmptyPanes", false)
--   atom.config.set("editor.fontFamily", "Courier")
--   atom.config.set("editor.fontSize", 16)
--   atom.config.set("editor.autoIndent", false)
+```js
+atom.config.set("core.destroyEmptyPanes", false)
+atom.config.set("editor.fontFamily", "Courier")
+atom.config.set("editor.fontSize", 16)
+atom.config.set("editor.autoIndent", false)
+```
 
 ##### Attach To DOM
 ```
@@ -241,7 +243,7 @@ This will include the functions `zdescribe` and `zit` to allow you to tell jasmi
 
 If these tests pass they will fail and if they fail they will pass but still output their messages as if they failed.
 
-(really only useful for testing a reporter or matcher)
+(really only useful for testing a reporter)
 
 ##### Jasmine Tagged
 ```
