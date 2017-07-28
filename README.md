@@ -120,7 +120,6 @@ const options = {
     jasmineFocused: true,
     jasmineJson: true,
     jasminePass: true,
-    jasminePromises: true,
     jasmineTagged: true,
     mockClock: true,
     mockLocalStorage: true,
@@ -231,33 +230,6 @@ Uses [jasmine-pass](https://github.com/UziTech/jasmine-pass)
 
 This will include a `pass()` function similar to Jasmine's `fail()` but opposite.
 
-##### Jasmine Promises
-
-Uses [jasmine-promises](https://github.com/matthewjh/jasmine-promises)
-
-This will allow any jasmine function (i.e. beforeEach, afterEach, it, describe, etc.) to execute a function that returns a promise and not finish until the promise is resolved.
-
-Normal async function
-```js
-it("will not complete until done() is called", function (done) {
-  asyncFunctionThatReturnsAPromise().then(done, done);
-});
-```
-
-Promise async function
-```js
-it("will not complete until the retuned promise is resolved", function () {
-  return asyncFunctionThatReturnsAPromise();
-});
-```
-
-async/await async function
-```js
-it("will not complete until the async function is complete", async function () {
-  await asyncFunctionThatReturnsAPromise();
-});
-```
-
 ##### Jasmine Should Fail
 ```
   jasmineShouldFail: true
@@ -334,7 +306,7 @@ This will include the function `jasmine.unspy(object, method)` to allow you to r
 
 ### Writing Tests
 
-[Jasmine 2.6 documentation](https://jasmine.github.io/2.6/introduction)
+[Jasmine 2.7 documentation](https://jasmine.github.io/2.7/introduction)
 
 ```javascript
 describe('Testing', function () {
