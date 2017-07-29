@@ -15,6 +15,10 @@ body {
 	padding: 0;
 }
 
+.hidden {
+	display: none !important;
+}
+
 .spec-reporter-tabs {
 	position: fixed;
 	z-index: 99995;
@@ -47,10 +51,6 @@ body {
 			z-index: 99997;
 			box-shadow: 0 0 10px 5px #333;
 			cursor: default;
-		}
-
-		&.hidden {
-			display: none;
 		}
 
 		&.not-available {
@@ -212,7 +212,7 @@ body.minimize-specs {
 				border-left-color: @passed-color;
 			}
 
-			.spec-toggle {
+			.j2-spec-toggle {
 				.octicon(fold);
 				float: right;
 				cursor: pointer;
@@ -224,11 +224,11 @@ body.minimize-specs {
 				}
 			}
 
-			.spec-toggle:hover {
+			.j2-spec-toggle:hover {
 				color: #333;
 			}
 
-			&:hover .spec-toggle {
+			&:hover .j2-spec-toggle {
 				opacity: 1;
 			}
 		}
