@@ -1,6 +1,6 @@
 "use babel";
 
-// jasmine 2.5 tests https://jasmine.github.io/2.5/introduction.html
+// jasmine 2.7 tests https://jasmine.github.io/2.7/introduction.html
 
 describe("Jasmine 2.x", function () {
 	beforeEach(function () {
@@ -941,6 +941,72 @@ describe("Jasmine 2.x", function () {
 					}
 				);
 			});
+		});
+
+		describe("Returning a Promise", function () {
+			var all;
+			var each;
+			var after;
+
+			beforeAll(function () {
+				return new Promise(function (resolve) {
+					setTimeout(function () {
+						all = 0;
+						resolve();
+					}, 1);
+				});
+			});
+
+			beforeEach(function () {
+				return new Promise(function (resolve) {
+					setTimeout(function () {
+						each = 0;
+						resolve();
+					}, 1);
+				});
+			});
+
+			afterEach(function () {
+				return new Promise(function (resolve) {
+					setTimeout(function () {
+						after = 0;
+						resolve();
+					}, 1);
+				});
+			});
+
+			it("waits for returned Promises", function(){
+				return new Promise(function (resolve) {
+					setTimeout(function () {
+						all++;
+						each++;
+						after = 1;
+
+						expect(all).toBe(1);
+						expect(each).toBe(1);
+						expect(after).toBe(1);
+
+						resolve();
+					}, 1);
+				});
+			});
+
+			it("waits for async functions as well", async function(){
+				await new Promise(function (resolve) {
+					setTimeout(function () {
+						all++;
+						each++;
+						after++;
+
+						resolve();
+					}, 1);
+				});
+
+				expect(all).toBe(2);
+				expect(each).toBe(1);
+				expect(after).toBe(1);
+			});
+
 		});
 	});
 });
