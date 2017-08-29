@@ -16,6 +16,7 @@
   "author": "Tony Brix",
   "license": "MIT",
   "dependencies": {
+    "etch": "^0.12.6",
     "find-parent-dir": "^0.3.0",
     "glob": "^7.1.1",
     "grim": "^2.0.1",
