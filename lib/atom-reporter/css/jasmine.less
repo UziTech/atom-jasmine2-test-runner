@@ -1,5 +1,5 @@
 // converted from https://github.com/atom/atom/blob/master/static/jasmine.less
-@import "octicon-mixins";
+@import "octicons";
 @background-color: hsl(0, 0%, 98%);
 @tab-color: #7282a1;
 @tab-active-color: #4372d0;
@@ -161,7 +161,6 @@ body.minimize-specs {
 				content: "\02022";
 				text-align: center;
 				display: block;
-				will-change: transform;
 				transition: transform 0.5s;
 			}
 
@@ -213,15 +212,10 @@ body.minimize-specs {
 			}
 
 			.j2-spec-toggle {
-				.octicon(fold);
 				float: right;
 				cursor: pointer;
 				opacity: 0;
 				color: #999;
-
-				&.folded {
-					.octicon(unfold);
-				}
 			}
 
 			.j2-spec-toggle:hover {
@@ -265,14 +259,18 @@ body.minimize-specs {
 		}
 	}
 
-	.stack-trace {
+	.j2-stack-trace {
 		font-size: 12px;
 		margin: 5px 0 0;
-		border-radius: 2px;
+		// border-radius: 2px;
 		line-height: 18px;
-		color: #ccc;
-		border: 1px solid #ddd;
+		// color: #ccc;
+		// border: 1px solid #ddd;
 		overflow: auto;
+
+		.icon-link-external::before {
+			font-size: 12px;
+		}
 	}
 
 	.tooltip {
