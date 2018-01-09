@@ -97,11 +97,12 @@ Returns a test runner created with the given `options` and `callback`. Both para
     -   `reporter` `[default: the default reporter]` - Which reporter to use on the terminal
     -   `suffix` `[default: "-spec"]` - File extension that indicates that the file contains tests
     -   `legacySuffix` `[default: "-spec-v1"]` - File extension that indicates that the file contains Jasmine v1.x tests
-    -   `showColors` `[default: true]` - Whether or not to colorize output on the terminal
+    -   `showColors` `[default: true]` - Colorize output on the terminal.
     -   `htmlTitle` `[default: The name of the package]` - The string to use for the window title in the HTML reporter
-    -   `showEditor` `[default: false]` - Whether or not to add a "Show Editor" tab to minimize the specs so you can see the editor behind it
+    -   `showEditor` `[default: false]` - Add a "Show Editor" tab to minimize the specs so you can see the editor behind it
     -   `timeReporter` `[default: false]` - Add a reporter that logs the time for each spec/suite. [TimeReporter](https://github.com/atom/atom/blob/master/spec/time-reporter.coffee)
     -   `specHelper` `[default: false]` - See [Spec Helpers](#spec-helpers)
+    -   `testPaths` `[default: './spec' or './test']` - Set the folders to look in for tests. This can be an array of files to test or folders to search for files ending with the `suffix`. If this is set it will override any path given after `atom --test`.
 
 #### Spec Helpers
 This will include Atom's [spec-helper](http://flight-manual.atom.io/hacking-atom/sections/writing-specs/#custom-matchers).
