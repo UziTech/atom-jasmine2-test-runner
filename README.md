@@ -102,7 +102,8 @@ Returns a test runner created with the given `options` and `callback`. Both para
     -   `showEditor` `[default: false]` - Add a "Show Editor" tab to minimize the specs so you can see the editor behind it
     -   `timeReporter` `[default: false]` - Add a reporter that logs the time for each spec/suite. [TimeReporter](https://github.com/atom/atom/blob/master/spec/time-reporter.coffee)
     -   `specHelper` `[default: false]` - See [Spec Helpers](#spec-helpers)
-    -   `testPaths` `[default: './spec' or './test']` - Set the folders to look in for tests. This can be an array of files to test or folders to search for files ending with the `suffix`. If this is set it will override any path given after `atom --test`.
+    -   `testPaths` `[default: './spec' or './test']` - Set the folders to look in for tests. This can be an array of files to test or folders to search for files ending with the `suffix`.
+        If this is set it will override any path given after `atom --test`.
 
 #### Spec Helpers
 This will include Atom's [spec-helper](http://flight-manual.atom.io/hacking-atom/sections/writing-specs/#custom-matchers).
