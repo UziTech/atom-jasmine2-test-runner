@@ -1,4 +1,4 @@
-"use babel";
+/** @babel */
 
 import createRunner from "./lib/create-runner";
 

@@ -1,4 +1,4 @@
-"use babel";
+/** @babel */
 
 describe("jasmine-promises", function () {
 	var time;

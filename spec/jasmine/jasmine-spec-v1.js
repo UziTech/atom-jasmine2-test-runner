@@ -1,4 +1,4 @@
-"use babel";
+/** @babel */
 
 // jasmine 1.3 tests https://jasmine.github.io/1.3/introduction.html
 
