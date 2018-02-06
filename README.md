@@ -103,6 +103,8 @@ Returns a test runner created with the given `options` and `callback`. Both para
     -   `timeReporter` `[default: false]` - Add a reporter that logs the time for each spec/suite. [TimeReporter](https://github.com/atom/atom/blob/master/spec/time-reporter.coffee)
     -   `specHelper` `[default: false]` - See [Spec Helpers](#spec-helpers)
     -   `testPaths` `[default: './spec' or './test']` - This can be an array of files to test or folders to search for files ending with the `suffix`. This does not apply to headless testing using `atom --test ./spec`
+    -   `random` `[default: false]` - Run your tests in semi-random order
+    -   `seed` `[default: random]` - Sets the randomization seed if randomization is turned on
 
 #### Spec Helpers
 This will include Atom's [spec-helper](http://flight-manual.atom.io/hacking-atom/sections/writing-specs/#custom-matchers).
