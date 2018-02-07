@@ -6,7 +6,7 @@ function deprecatedFunction() {
 	Grim.deprecate("This function is deprecated! Please use `nonDeprecatedFunction()`");
 }
 
-describe("Jasmine 1.x", function () {
+describe("Legacy Reporter", function () {
 	beforeEach(function () {
 		jasmine.useRealClock();
 	});

@@ -1,6 +1,6 @@
 /** @babel */
 
-describe("dev-dependencies", function () {
+describe("devDependencies", function () {
   it("should not have devDependencies by default", function () {
     const pkg = require("../../package.json");
 
