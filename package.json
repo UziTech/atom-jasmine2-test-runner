@@ -16,12 +16,12 @@
   "author": "Tony Brix",
   "license": "MIT",
   "dependencies": {
-    "etch": "^0.12.6",
+    "etch": "^0.12.8",
     "find-parent-dir": "^0.3.0",
-    "glob": "^7.1.1",
-    "grim": "^2.0.1",
-    "jasmine": "~2.9.0",
-    "semver": "^5.4.1",
+    "glob": "^7.1.2",
+    "grim": "^2.0.2",
+    "jasmine": "~2.99.0",
+    "semver": "^5.5.0",
     "underscore-plus": "^1.6.6"
   }
 }
