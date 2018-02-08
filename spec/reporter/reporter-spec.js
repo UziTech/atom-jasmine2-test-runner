@@ -57,7 +57,7 @@ describe("Atom Reporter", function () {
 		});
 
 		it("should pass async", function (done) {
-			setTimeout(_ => {
+			setTimeout(() => {
 				pass();
 				done();
 			}, 1000);
@@ -83,7 +83,7 @@ describe("Atom Reporter", function () {
 		});
 
 		it("should fail async", function (done) {
-			setTimeout(_ => {
+			setTimeout(() => {
 				fail();
 				done();
 			}, 1000);
@@ -94,7 +94,7 @@ describe("Atom Reporter", function () {
 		});
 
 		it("should fail when called async", function (done) {
-			setTimeout(_ => {
+			setTimeout(() => {
 				fail("because i called fail async");
 				done();
 			}, 1000);
@@ -107,7 +107,7 @@ describe("Atom Reporter", function () {
 		});
 
 		it("should report deprecation async", function (done) {
-			setTimeout(_ => {
+			setTimeout(() => {
 				deprecatedFunction();
 				done();
 			}, 1000);

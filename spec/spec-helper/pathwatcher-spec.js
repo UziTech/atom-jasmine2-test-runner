@@ -10,13 +10,13 @@ describe("pathwatcher", function () {
 		const pw = pathwatcher.watch("../");
 		pw.close();
 	});
-	it("should report error", function(){
+	it("should report error", function () {
 		expect(console.error).not.toHaveBeenCalled();
 	});
 	it("should fail", function () {
 		pathwatcher.watch("../");
 	});
-	it("should report error", function(){
+	it("should report error", function () {
 		expect(console.error).toHaveBeenCalledTimes(1);
 	});
 });

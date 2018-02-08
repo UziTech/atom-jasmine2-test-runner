@@ -6,8 +6,8 @@ describe("jasmine-jquery", function () {
 	beforeEach(function () {
 		this.domContainer = $("<div id='jasmine-jquery-specs-container' />").appendTo("body");
 		this.tag = (tag) => {
-			let $el = $("<" + tag + " />");
-			$el.attach = _ => {
+			const $el = $(`<${tag} />`);
+			$el.attach = () => {
 				return $el.appendTo(this.domContainer);
 			};
 			return $el;
@@ -83,7 +83,7 @@ describe("jasmine-jquery", function () {
 		it("should define toBeSelected", function () {
 			const option1 = this.tag("option");
 			const option2 = this.tag("option");
-			const select = this.tag("select").append(option1, option2);
+			this.tag("select").append(option1, option2);
 			expect(option1).toBeSelected();
 			expect(option1[0]).toBeSelected();
 			expect(option2).not.toBeSelected();
@@ -254,7 +254,7 @@ describe("jasmine-jquery", function () {
 			it("should define toBeSelected", function () {
 				const option1 = this.tag("option");
 				const option2 = this.tag("option");
-				const select = this.tag("select").append(option1, option2);
+				this.tag("select").append(option1, option2);
 				expect(option1).not.toBeSelected();
 				expect(option2).toBeSelected();
 			});

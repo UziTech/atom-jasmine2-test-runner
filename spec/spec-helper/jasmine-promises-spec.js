@@ -10,7 +10,9 @@ describe("jasmine-promises", function () {
 		if (jasmine.useRealClock) {
 			jasmine.useRealClock();
 		}
-		await new Promise(resolve => { setTimeout(resolve, 3000); });
+		await new Promise(resolve => {
+			setTimeout(resolve, 3000);
+		});
 	});
 
 	it("should be called 3 seconds after time was set", function () {

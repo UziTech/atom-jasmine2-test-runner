@@ -171,14 +171,14 @@ describe("Adding a custom matcher", function () {
 					expected = "";
 				}
 
-				var pass = this.actual.hyuk === "gawrsh" + expected;
+				var pass = this.actual.hyuk === `gawrsh${expected}`;
 
 				if (pass) {
 
-					this.message = "Expected " + this.actual + " not to be quite so goofy";
+					this.message = `Expected ${this.actual} not to be quite so goofy`;
 				} else {
 
-					this.message = "Expected " + this.actual + " to be goofy, but it was not very goofy";
+					this.message = `Expected ${this.actual} to be goofy, but it was not very goofy`;
 				}
 
 				return pass;

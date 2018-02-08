@@ -17,8 +17,8 @@ describe("Legacy Reporter", function () {
 		});
 
 		it("should pass async", function () {
-			waitsForPromise(_ => new Promise(resolve => {
-				setTimeout(_ => {
+			waitsForPromise(() => new Promise(resolve => {
+				setTimeout(() => {
 					expect(true).toBe(true);
 					resolve();
 				}, 1000);
@@ -43,8 +43,8 @@ describe("Legacy Reporter", function () {
 		});
 
 		it("should fail async", function () {
-			waitsForPromise(_ => new Promise(resolve => {
-				setTimeout(_ => {
+			waitsForPromise(() => new Promise(resolve => {
+				setTimeout(() => {
 					expect(true).toBe(false);
 					resolve();
 				}, 1000);
@@ -59,8 +59,8 @@ describe("Legacy Reporter", function () {
 		});
 
 		it("should report deprecation async", function () {
-			waitsForPromise(_ => new Promise(resolve => {
-				setTimeout(_ => {
+			waitsForPromise(() => new Promise(resolve => {
+				setTimeout(() => {
 					expect(true).toBe(true);
 					deprecatedFunction();
 					resolve();

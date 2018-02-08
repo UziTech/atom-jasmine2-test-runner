@@ -1,7 +1,7 @@
 describe("unspy", function () {
 	beforeEach(function () {
 		this.count = 0;
-		this.obj = { method: _ => ++this.count };
+		this.obj = { method: () => ++this.count };
 	});
 	it("should remove the spy", function () {
 		spyOn(this.obj, "method");

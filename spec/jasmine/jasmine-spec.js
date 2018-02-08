@@ -481,6 +481,7 @@ describe("Jasmine 2.x", function () {
 				}
 			};
 
+			// eslint-disable-next-line no-unused-vars
 			spyOn(foo, "getBar").and.callFake(function (args, can, be, received) {
 				return 1001;
 			});
@@ -503,6 +504,7 @@ describe("Jasmine 2.x", function () {
 	});
 
 	describe("A spy, when configured to throw an error", function () {
+		// eslint-disable-next-line no-unused-vars
 		let foo, bar;
 
 		beforeEach(function () {
@@ -548,6 +550,7 @@ describe("Jasmine 2.x", function () {
 	});
 
 	describe("A spy", function () {
+		// eslint-disable-next-line no-unused-vars
 		let foo, bar = null;
 
 		beforeEach(function () {
@@ -819,7 +822,7 @@ describe("Jasmine 2.x", function () {
 	describe("custom asymmetry", function () {
 		const tester = {
 			asymmetricMatch: function (actual) {
-				const secondValue = actual.split(",")[1];
+				const [, secondValue] = actual.split(",");
 				return secondValue === "bar";
 			}
 		};
@@ -975,7 +978,7 @@ describe("Jasmine 2.x", function () {
 				});
 			});
 
-			it("waits for returned Promises", function(){
+			it("waits for returned Promises", function () {
 				return new Promise(function (resolve) {
 					setTimeout(function () {
 						all++;
@@ -991,7 +994,7 @@ describe("Jasmine 2.x", function () {
 				});
 			});
 
-			it("waits for async functions as well", async function(){
+			it("waits for async functions as well", async function () {
 				await new Promise(function (resolve) {
 					setTimeout(function () {
 						all++;
