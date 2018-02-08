@@ -6,11 +6,49 @@ function deprecatedFunction() {
 	Grim.deprecate("This function is deprecated! Please use `nonDeprecatedFunction()`");
 }
 
+const env = jasmine.getEnv();
+
+env.deprecated("Deprecated in top level");
+
 describe("Atom Reporter", function () {
 	beforeEach(function () {
 		if (jasmine.useRealClock) {
 			jasmine.useRealClock();
 		}
+	});
+
+	zdescribe("failing in beforeAll", function () {
+		beforeAll(function () {
+			fail();
+		});
+
+		it("should fail because of beforeAll", function () {
+
+		});
+	});
+
+	zdescribe("failing in beforeEach", function () {
+		beforeEach(function () {
+			fail();
+		});
+
+		it("should fail because of beforeEach", function () {
+
+		});
+	});
+
+	zdescribe("deprecated in before functions", function () {
+		beforeAll(function () {
+			env.deprecated("Deprecated in describe beforeAll");
+		});
+
+		beforeEach(function () {
+			env.deprecated("Deprecated in describe beforeEach");
+		});
+
+		it("should fail because of deprecation in beforeEach", function () {
+
+		});
 	});
 
 	describe("passing", function () {
