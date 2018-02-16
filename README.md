@@ -3,6 +3,8 @@
 [![Dependencies Status](https://david-dm.org/UziTech/atom-jasmine2-test-runner/status.svg)](https://david-dm.org/UziTech/atom-jasmine2-test-runner)
 [![Greenkeeper badge](https://badges.greenkeeper.io/UziTech/atom-jasmine2-test-runner.svg)](https://greenkeeper.io/)
 
+# 🚨 [Atom Jasmine 3.x Test Runner](https://github.com/UziTech/atom-jasmine3-test-runner) is available now 🚨
+
 # Atom Jasmine 2.x Test Runner
 
 By default, Atom runs your tests with Jasmine 1.3 (for more information on testing packages in Atom, please [see the Atom Flight Manual](http://flight-manual.atom.io/hacking-atom/sections/writing-specs/#running-specs)). Atom allows you to specify a custom test runner using the `atomTestRunner` field in your `package.json`, but implementing a custom test runner is not straightforward. This module allows you to transition your specs to Jasmine 2.x with minimal fuss.
