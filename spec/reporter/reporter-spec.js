@@ -145,4 +145,10 @@ describe("Atom Reporter", function () {
 			});
 		});
 	});
+
+	zdescribe("no stacktrace", function () {
+		it("should show the message as the stacktrace", function () {
+			throw "test message";
+		});
+	});
 });
