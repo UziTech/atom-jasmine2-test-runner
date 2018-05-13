@@ -14,7 +14,7 @@ By default, Atom runs your tests with Jasmine 1.3 (for more information on testi
 ## Installation
 
 ```
-$ apm install [--save-dev] atom-jasmine2-test-runner
+$ npm install [--save-dev] atom-jasmine2-test-runner
 ```
 
 ## Usage
