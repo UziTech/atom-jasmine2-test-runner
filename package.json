@@ -20,7 +20,7 @@
     "find-parent-dir": "^0.3.0",
     "glob": "^7.1.2",
     "grim": "^2.0.2",
-    "jasmine": "~2.99.0",
+    "jasmine": "~3.4.0",
     "semver": "^5.5.0",
     "underscore-plus": "^1.6.6"
   }
